@@ -39,7 +39,7 @@ export default function Projects() {
             >
               {ProjectNames.map((name, index) => {
                 return (
-                  <div className="w-fit text-neutral-400">
+                  <div key={name} className="w-fit text-neutral-400">
                     {index === page && name}
                   </div>
                 );

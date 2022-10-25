@@ -6,7 +6,7 @@ export default function ProjectDataRender({
   Name,
 }) {
   return (
-    <div className="flex sm:flex-row flex-col sm:p-8 mr-8 sm:mr-0 font-Abril lg:max-h-96 sm:max-h-fit  max-h-96 overflow-y-auto sm:min-w-full lg:text-base text-sm">
+    <div className="flex sm:flex-row flex-col sm:p-8 mr-8 sm:mr-0 font-Abril lg:max-h-96 sm:max-h-fit  max-h-80 overflow-y-auto sm:min-w-full lg:text-base text-sm">
       <div className="font-Abril p-2 sm:max-h-96 h-fit sm:overflow-y-auto">
         <div className="font-Ezcar text-lg border-b border-black">
           Over View

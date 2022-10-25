@@ -141,7 +141,7 @@ export default function ProjectDisplay({ page, setPage }) {
         >
           {projectData.map((itemData, index) => {
             return (
-              <div>
+              <div key={index}>
                 {page === index && (
                   <ProjectDataRender
                     Stack={itemData.Stack}

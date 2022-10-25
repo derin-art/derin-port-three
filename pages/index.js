@@ -4,54 +4,7 @@ import { motion, AnimatePresence, useCycle } from "framer-motion";
 import { useAnimatePresence } from "use-animate-presence";
 import Projects from "../components/Projects";
 
-import {
-  ScrollContainer,
-  ScrollPage,
-  batch,
-  Fade,
-  FadeIn,
-  FadeOut,
-  Move,
-  MoveIn,
-  MoveOut,
-  Sticky,
-  StickyIn,
-  StickyOut,
-  Zoom,
-  ZoomIn,
-  ZoomOut,
-} from "react-scroll-motion";
-import { useStyleRegistry } from "styled-jsx";
-
-const Animator = dynamic(
-  import("react-scroll-motion").then((it) => it.Animator),
-  { ssr: false }
-);
-
-const variants = {
-  x: { from: -800, to: 0 },
-};
-
-const AppNN = () => {
-  const animatedDiv = useAnimatePresence({
-    variants: fadeableVariants,
-    initial: "visible",
-  });
-
-  return (
-    <div>
-      <button onClick={() => animatedDiv.togglePresence()}>Toggle</button>
-      {animatedDiv.isRendered && (
-        <div ref={animatedDiv.ref} className="h-96 w-96 bg-red-300">
-          nnxc
-        </div>
-      )}
-    </div>
-  );
-};
-
 export default function Home() {
-  const [isVisible, onCycle] = useCycle(true, false);
   const [openCrud, setOpenCrud] = useState(false);
   const FadeAlt = () => ({
     in: {
