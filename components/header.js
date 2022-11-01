@@ -59,7 +59,7 @@ export default function Header() {
         >
           D
         </div>
-        <div className="absolute right-0 flex text-sm sm:hidden">
+        <div className="absolute right-2 flex text-sm sm:hidden top-4">
           {mobileLinks.map((item) => {
             return (
               <a

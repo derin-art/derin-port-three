@@ -25,9 +25,9 @@ export default function Projects() {
   };
 
   return (
-    <div className="flex items-center justify-center h-screen md:pt-4 lg:pt-0">
+    <div className="flex sm:items-center justify-center h-screen md:pt-4 lg:pt-0 pt-24">
       <div className="w-5/6   relative">
-        <div className="w-full flex relative pt-10 flex-col-reverse sm:flex-row">
+        <div className="w-full flex relative sm:pt-10 flex-col-reverse sm:flex-row">
           <AnimatePresence exitBeforeEnter initial={false}>
             <motion.div
               key={page}

@@ -76,7 +76,7 @@ export default function Home() {
                   I enjoy figuring out complex apps and putting the pieces until
                   a complete app is formed
                 </div>{" "}
-                <div className="absolute lg:bottom-10 -bottom-20 right-2 text-xl flex items-center font-bold justify-center animate-bounce hidden md:flex">
+                <div className="absolute lg:bottom-10 -bottom-20 right-2 text-xl flex items-center font-bold justify-center animate-bounce  md:flex">
                   <p className="mr-2">Scroll Down</p>
                   <div className="rounded-full border-2 border-black ">
                     {" "}
@@ -96,7 +96,7 @@ export default function Home() {
           </div>
         </div>
         <div className="h-screen w-full sticky top-0" key={"2"}>
-          <div id="Projects" className="w-full h-screen  border z-10 bg-white">
+          <div id="Projects" className="w-full h-screen  border z-10 bg-white ">
             <Projects></Projects>
           </div>
         </div>
