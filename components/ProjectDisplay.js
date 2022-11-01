@@ -3,6 +3,14 @@ import react, { useState } from "react";
 import { useAnimatePresence } from "use-animate-presence";
 import { AnimatePresence } from "framer-motion";
 import { motion } from "framer-motion";
+import agile1 from "../public/ProjectImages/agile1.png";
+import agile2 from "../public/ProjectImages/agile2.png";
+import agile3 from "../public/ProjectImages/agile3.png";
+import agile4 from "../public/ProjectImages/agile4.png";
+import agile5 from "../public/ProjectImages/agile5.png";
+import Crud2 from "../public/ProjectImages/Crud2.png";
+import porP2 from "../public/ProjectImages/porP2.jpg";
+import portP3 from "../public/ProjectImages/portP3.png";
 
 export default function ProjectDisplay({ page, setPage }) {
   const projectData = [
@@ -11,16 +19,15 @@ export default function ProjectDisplay({ page, setPage }) {
       OverView: (
         <p>
           {" "}
-          The most complex project i've built so far, a Team Agile and Scrum
-          that is meant to give a team Agile and Scrum tools and communication
-          tools. The primary objective of this project was to build an App to
-          coordinate, manage and communicate with a selected group of people who
-          would be the team. This app was built was built with Nextjs and
-          Tailwind and made use of a wide array of technologies including, React
-          Draggable and Drop, Ably communication systems for the chat and
-          communication component of this app, firebase to register users and
+          The most complex project i&apos;ve built so far, a Team Agile and
+          Scrum that is meant to give a team Agile and Scrum tools and
+          communication tools. The primary objective of this project was to
+          build an App to coordinate, manage and communicate with a selected
+          group of people who would be the team. This app was built was built
+          with Nextjs and Tailwind and made use of a wide array of technologies
+          including, React Draggable and Drop, firebase to register users and
           for the login and logout capabilities and Mongodb to keep a record of
-          the team's data and patch it on request.
+          the team&apos;s data and patch it on request.
         </p>
       ),
       Scope: (
@@ -35,8 +42,7 @@ export default function ProjectDisplay({ page, setPage }) {
           eventually end on, “an app to connect and coordinate teams equipped
           with agile and scrum technologies”. I decided on key features like the
           existence of team data that could be edited and basic agile features
-          like a backlog, a story map, a sprint planner and a communication
-          feature developed with Ably.
+          like a backlog, a story map, and a sprint planner.
         </p>
       ),
       Execution: (
@@ -56,6 +62,7 @@ export default function ProjectDisplay({ page, setPage }) {
         </div>
       ),
       Stack: ["NextJs", "TailWind", "MongoDB", "FireBase"],
+      Images: [agile1, agile2, agile3, agile4, agile5],
     },
     {
       Name: "E-COMMERCE AND CRUD-APP",
@@ -93,6 +100,7 @@ export default function ProjectDisplay({ page, setPage }) {
         </div>
       ),
       Stack: ["ReactJs", "TailWind", "MongoDB", "ExpressJs", "NodeJs"],
+      Images: [porP2, portP3, Crud2],
     },
   ];
 
@@ -114,22 +122,42 @@ export default function ProjectDisplay({ page, setPage }) {
     },
   };
 
+  const variants2 = {
+    out: {
+      opacity: 0,
+      y: 20,
+      transition: {
+        duration: 0.75,
+      },
+    },
+    in: {
+      opacity: 1,
+      y: 0,
+      transition: {
+        duration: 0.75,
+      },
+    },
+  };
+
   return (
-    <div className="overflow-hidden   relative">
-      <button
-        className="text-right font-Ezcar border p-2 rounded border-black hover:bg-neutral-700 duration-300 hover:text-white"
-        onClick={() => {
-          setPage((prev) => {
-            if (prev === 0) {
-              return 1;
-            } else {
-              return 0;
-            }
-          });
-        }}
-      >
-        Next Project ›
-      </button>
+    <div className="overflow-hidden   relative w-full">
+      <div className="flex">
+        <button
+          className="text-right font-Ezcar border p-2 sm:text-base text-sm rounded border-black hover:bg-neutral-700 duration-300 hover:text-white"
+          onClick={() => {
+            setPage((prev) => {
+              if (prev === 0) {
+                return 1;
+              } else {
+                return 0;
+              }
+            });
+          }}
+        >
+          Next Project ›
+        </button>
+      </div>
+
       <AnimatePresence exitBeforeEnter initial={false}>
         <motion.div
           key={page}
@@ -141,14 +169,16 @@ export default function ProjectDisplay({ page, setPage }) {
         >
           {projectData.map((itemData, index) => {
             return (
-              <div key={index}>
+              <div key={index} className="">
                 {page === index && (
                   <ProjectDataRender
+                    Gallery={itemData.Images}
                     Stack={itemData.Stack}
                     Scope={itemData.Scope}
                     OverView={itemData.OverView}
                     Execution={itemData.Execution}
                     key={index}
+                    Name={itemData.Name}
                   ></ProjectDataRender>
                 )}
               </div>

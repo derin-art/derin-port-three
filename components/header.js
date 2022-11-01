@@ -27,8 +27,6 @@ export default function Header() {
     });
   };
 
-  console.log(pageLocation);
-
   useEffect(() => {
     window.addEventListener("scroll", handleScroll, { passive: true });
 
@@ -36,6 +34,16 @@ export default function Header() {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
+
+  const mobileLinks = [
+    { Name: "Github", Link: "https://github.com/derin-art" },
+    {
+      Name: "LinkedIn",
+      Link: "https://www.linkedin.com/in/derin-owoade-089685172/",
+    },
+    { Name: "Mail", Link: "mailto:owoadederin6@gmail.com?subject=Contact Me" },
+    { Name: "Projects", Link: "/#Projects" },
+  ];
 
   return (
     <div className="w-full flex fixed z-50 top-0 items-center justify-center">
@@ -50,13 +58,46 @@ export default function Header() {
         >
           D
         </div>
-        <div className="absolute right-0 flex">
+        <div className="absolute right-0 flex text-sm sm:hidden">
+          {mobileLinks.map((item) => {
+            return (
+              <a
+                key={item.Name}
+                target={`${item.Name !== "Projects" ? "_blank" : ""}`}
+                href={item.Link}
+                className="mr-2 font-Josefin"
+              >
+                {item.Name}
+              </a>
+            );
+          })}
+        </div>
+        <div className="absolute right-0 flex hidden sm:block">
           <div className="flex items-start">
-            <button className="font-Josefin mr-4">Contact</button>
-            <button className="font-Josefin ">Projects</button>
+            <a
+              href="mailto:owoadederin6@gmail.com?subject=Contact Me"
+              className="font-Josefin mr-4"
+            >
+              Mail
+            </a>
+            <a href="/#Projects" className="font-Josefin ">
+              Projects
+            </a>
             <div className="-rotate-90 sm:mt-16 sm:-ml-4 relative mt-16 -ml-6 -mr-6 sm:mr-0">
-              <button className="font-Josefin mr-4">Github</button>
-              <button className="font-Josefin ">LinkedIn</button>
+              <a
+                href="https://github.com/derin-art"
+                target="_blank"
+                className="font-Josefin mr-4"
+              >
+                Github
+              </a>
+              <a
+                href="https://www.linkedin.com/in/derin-owoade-089685172/"
+                target="_blank"
+                className="font-Josefin "
+              >
+                LinkedIn
+              </a>
               <div className="flex absolute top-1 right-40">
                 <div
                   className={`h-4 w-4 rounded-full duration-300  ${

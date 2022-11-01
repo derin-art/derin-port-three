@@ -68,7 +68,7 @@ export default function Home() {
     <div className="w-full h-full">
       <div>
         <div className="h-screen w-full sticky top-0" key={"1"}>
-          <div className="w-full h-screen bg-blue-50 z-40 border">
+          <div className="w-full h-screen bg-blue-50 z-40 border" id="home">
             <div className="flex sm:p-8 items-center justify-center lg:text-9xl md:text-5xl sm:text-4xl text-5xl w-full h-full">
               {" "}
               <div className="sm:w-5/6 w-full font-Ezcar  p-4 text-gray-800 flex flex-col relative">
@@ -85,7 +85,7 @@ export default function Home() {
                 </div>
                 <div className="border-b border-t md:p-4 z-50">
                   <div> Hi,</div>
-                  <div>I'm Derin </div>
+                  <div>I&apos;m Derin </div>
                   and im a frontend Engineer
                   <div className="text-sm text-gray-400">
                     Built by OluwasoromiDerin Kehinde Owoade, 2021
@@ -96,7 +96,7 @@ export default function Home() {
           </div>
         </div>
         <div className="h-screen w-full sticky top-0" key={"2"}>
-          <div className="w-full h-screen  border z-10 bg-white">
+          <div id="Projects" className="w-full h-screen  border z-10 bg-white">
             <Projects></Projects>
           </div>
         </div>
