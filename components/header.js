@@ -82,7 +82,7 @@ export default function Header() {
               Mail
             </a>
             <Link href="/#Projects" className="font-Josefin ">
-              Projects
+              <div className="font-Josefin cursor-pointer">Projects</div>
             </Link>
             <div className="-rotate-90 sm:mt-16 sm:-ml-4 relative mt-16 -ml-6 -mr-6 sm:mr-0">
               <a
