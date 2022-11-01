@@ -1,6 +1,7 @@
 import { AnimatePresence } from "framer-motion";
 import { motion } from "framer-motion";
 import react, { useState, useEffect } from "react";
+import Image from "next/image";
 
 export default function GalleryComponent({ imgArray }) {
   const variants = {
@@ -80,6 +81,7 @@ export default function GalleryComponent({ imgArray }) {
                 if (index === imgNo) {
                   return (
                     <img
+                      alt="ScreenShots of Project"
                       className="sm:max-h-72 sm:h-72 border border-black max-h-56 "
                       src={item.src}
                       key={index}

@@ -123,17 +123,17 @@ export default function ProjectDataRender({
           {LinksArr.map((item) => {
             if (item.LinkName !== "AGILE") {
               return (
-                <div className="flex mb-1 items-center">
+                <div className="flex mb-1 items-center" key={item.LinkName}>
                   <div className="border-b border-black h-fit">
                     {item.LinkName}:
                   </div>
                   <div className="ml-2">
-                    <a href={item.Live} target="_blank">
+                    <a href={item.Live} target="_blank" rel="noreferrer">
                       {LiveIcon}
                     </a>
                   </div>
                   <div className="ml-2">
-                    <a href={item.GitHub} target="_blank">
+                    <a href={item.GitHub} target="_blank" rel="noreferrer">
                       {GithubIcon}
                     </a>
                   </div>
@@ -141,14 +141,14 @@ export default function ProjectDataRender({
               );
             } else {
               return (
-                <div className="flex  mt-1">
+                <div className="flex  mt-1" key={item.LinkName}>
                   <div className="ml-2">
-                    <a href={item.Live} target="_blank">
+                    <a href={item.Live} target="_blank" rel="noreferrer">
                       {LiveIconAgile}
                     </a>
                   </div>
                   <div className="ml-2">
-                    <a href={item.GitHub} target="_blank">
+                    <a href={item.GitHub} target="_blank" rel="noreferrer">
                       {GithubIconAgile}
                     </a>
                   </div>

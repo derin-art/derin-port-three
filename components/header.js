@@ -1,4 +1,5 @@
 import react, { useEffect, useState } from "react";
+import Link from "next/link";
 
 export default function Header() {
   const [scrollPosition, setSrollPosition] = useState(0);
@@ -80,13 +81,14 @@ export default function Header() {
             >
               Mail
             </a>
-            <a href="/#Projects" className="font-Josefin ">
+            <Link href="/#Projects" className="font-Josefin ">
               Projects
-            </a>
+            </Link>
             <div className="-rotate-90 sm:mt-16 sm:-ml-4 relative mt-16 -ml-6 -mr-6 sm:mr-0">
               <a
                 href="https://github.com/derin-art"
                 target="_blank"
+                rel="noreferrer"
                 className="font-Josefin mr-4"
               >
                 Github
@@ -95,6 +97,7 @@ export default function Header() {
                 href="https://www.linkedin.com/in/derin-owoade-089685172/"
                 target="_blank"
                 className="font-Josefin "
+                rel="noreferrer"
               >
                 LinkedIn
               </a>

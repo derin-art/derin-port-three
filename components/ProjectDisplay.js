@@ -20,12 +20,12 @@ export default function ProjectDisplay({ page, setPage }) {
         <p>
           {" "}
           The most complex project i&apos;ve built so far, a Team Agile and
-          Scrum that is meant to give a team Agile and Scrum tools and
-          communication tools. The primary objective of this project was to
+          Scrum app that is meant to give a Team, Agile and Scrum tools and
+          Communication tools. The primary objective of this project was to
           build an App to coordinate, manage and communicate with a selected
           group of people who would be the team. This app was built was built
           with Nextjs and Tailwind and made use of a wide array of technologies
-          including, React Draggable and Drop, firebase to register users and
+          including, React Draggable and Drop, Firebase to register users and
           for the login and logout capabilities and Mongodb to keep a record of
           the team&apos;s data and patch it on request.
         </p>
@@ -34,7 +34,7 @@ export default function ProjectDisplay({ page, setPage }) {
         <p>
           {" "}
           This project was bound to be large and it was important to decide on
-          the scope early on to avoid burnout and spiralling out or comprising
+          the scope early on to avoid burnout and spiralling out or compromising
           the features that i wanted in the app. Early on after i completed and
           collected my agile and scrum certificate, I knew i wanted to build
           something that applied that knowledge, the only problem was where to
@@ -49,14 +49,14 @@ export default function ProjectDisplay({ page, setPage }) {
         <div>
           After completing this project, there are little changes I would make
           if I was doing it again;
-          <ol>
+          <ol className="mt-2">
             <li>
-              I would use Redux as the amount of states in this project where a
-              lot and i think a technology meant for state management would have
-              been really helpful,
+              1. I would use Redux as the amount of states in this project where
+              a lot and i think a technology meant for state management would
+              have been really helpful.
             </li>
-            <li>
-              I would use Typescript instead of JavaScript for tighter code
+            <li className="mt-1">
+              2. I would use Typescript instead of JavaScript for tighter code.
             </li>
           </ol>
         </div>
@@ -73,8 +73,8 @@ export default function ProjectDisplay({ page, setPage }) {
           C.R.U.D app. The C.R.U.D app was built with NodeJs, ExpressJs and
           MongoDB, and handles the data that is fed to the E-commerce app on
           request. It is essentially the backend interface for the E-commerce
-          App. The C.R.U.D features a signin feature. The E-commerce was built
-          with react and tailwind and enabled through useContext.
+          App. The C.R.U.D also features a SignIn feature. The E-commerce was
+          built with react and tailwind and enabled through useContext.
         </p>
       ),
       Scope: (
@@ -92,8 +92,8 @@ export default function ProjectDisplay({ page, setPage }) {
           <ul>
             After completing this project, there are little changes I would make
             if I was doing it again;
-            <li>
-              I would use Nextjs to avoid hosting an independent ExpressJs
+            <li className="mt-1">
+              1. I would use Nextjs to avoid hosting an independent ExpressJs
               backend
             </li>
           </ul>
