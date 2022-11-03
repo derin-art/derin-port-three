@@ -60,7 +60,7 @@ export default function Projects() {
               </div>
             );
           })}
-          <div className="font-Ezcar lg:text-7xl md:text-3xl text-2xl sm:absolute md:right-0 right-4">
+          <div className="font-Ezcar lg:text-7xl md:text-3xl text-2xl sm:absolute md:right-0 right-4 text-black">
             PROJECTS
           </div>
         </div>

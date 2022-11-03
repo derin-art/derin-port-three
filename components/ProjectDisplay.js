@@ -143,7 +143,7 @@ export default function ProjectDisplay({ page, setPage }) {
     <div className="overflow-hidden   relative w-full">
       <div className="flex">
         <button
-          className="text-right font-Ezcar border p-2 sm:text-base text-sm rounded border-black hover:bg-neutral-700 duration-300 hover:text-white"
+          className="text-right font-Ezcar border p-2 text-black sm:text-base text-sm rounded border-black hover:bg-neutral-700 duration-300 hover:text-white"
           onClick={() => {
             setPage((prev) => {
               if (prev === 0) {

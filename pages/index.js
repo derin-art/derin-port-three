@@ -106,8 +106,8 @@ export default function Home() {
               {" "}
               <div className="w-5/6 font-Ezcar pt-8 hidden md:block">
                 {" "}
-                <div className="text-left w-fit">STACK</div>
-                <div className="text-right -mt-16 flex flex-col">
+                <div className="text-left w-fit text-black">STACK</div>
+                <div className="text-right -mt-16 flex flex-col text-black">
                   {[
                     "REACT",
                     "TAILWIND",
@@ -148,6 +148,7 @@ export default function Home() {
                     whileInView={{ opacity: 1, skewX: "0deg" }}
                     transition={{ duration: 0.6 }}
                     viewport={{ once: false }}
+                    className="text-black"
                   >
                     {item}
                   </motion.div>

@@ -66,14 +66,14 @@ export default function Header() {
                 key={item.Name}
                 target={`${item.Name !== "Projects" ? "_blank" : ""}`}
                 href={item.Link}
-                className="mr-2 font-Josefin"
+                className="mr-2 font-Josefin text-black"
               >
                 {item.Name}
               </a>
             );
           })}
         </div>
-        <div className="absolute right-0 flex hidden sm:block">
+        <div className="absolute right-0 flex hidden sm:block text-black">
           <div className="flex items-start">
             <a
               href="mailto:owoadederin6@gmail.com?subject=Contact Me"

@@ -109,7 +109,7 @@ export default function ProjectDataRender({
   }
 
   return (
-    <div className="">
+    <div className="text-black">
       <div className="flex">
         <button
           onClick={() => {
