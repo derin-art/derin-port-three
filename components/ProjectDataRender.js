@@ -103,7 +103,7 @@ export default function ProjectDataRender({
       {
         LinkName: "AGILE",
         GitHub: "https://github.com/derin-art/Agile",
-        Live: "https://agile-qqlso8s8l-derin-art.vercel.app/",
+        Live: "https://agile-hazel.vercel.app/",
       },
     ];
   }
