@@ -74,50 +74,52 @@ export default function Header() {
           })}
         </div>
         <div className="absolute right-0 flex hidden sm:block text-black">
-          <div className="flex items-start">
+          <div className="flex items-start mt-4">
             <a
               href="mailto:owoadederin6@gmail.com?subject=Contact Me"
-              className="font-Josefin mr-4"
+              className="font-Ezcar font-bold mr-4"
             >
               Mail
             </a>
             <Link href="/#Projects" className="font-Josefin ">
-              <div className="font-Josefin cursor-pointer">Projects</div>
+              <div className="font-Ezcar font-bold cursor-pointer">
+                Projects
+              </div>
             </Link>
             <div className="-rotate-90 sm:mt-16 sm:-ml-4 relative mt-16 -ml-6 -mr-6 sm:mr-0">
               <a
                 href="https://github.com/derin-art"
                 target="_blank"
                 rel="noreferrer"
-                className="font-Josefin mr-4"
+                className="font-Ezcar font-bold mr-4"
               >
                 Github
               </a>
               <a
                 href="https://www.linkedin.com/in/derin-owoade-089685172/"
                 target="_blank"
-                className="font-Josefin "
+                className="font-Ezcar font-bold "
                 rel="noreferrer"
               >
                 LinkedIn
               </a>
               <div className="flex absolute top-1 right-40">
                 <div
-                  className={`h-4 w-4 rounded-full duration-300  ${
+                  className={`h-6 w-2 rounded-full duration-300  ${
                     pageLocation === "home" && "bg-blue-300"
                   } ${pageLocation === "projects" && "bg-neutral-400"} ${
                     pageLocation === "Stack" && "bg-blue-800"
                   }`}
                 ></div>
                 <div
-                  className={`h-4 w-4 rounded-full duration-300 ml-2  ${
+                  className={`h-6 w-2 rounded-full duration-300 ml-2  ${
                     pageLocation === "home" && "bg-gray-700"
                   } ${pageLocation === "projects" && "bg-black"} ${
                     pageLocation === "Stack" && "bg-gray-700"
                   }`}
                 ></div>
                 <div
-                  className={`h-4 w-4 rounded-full duration-300 ml-2 ${
+                  className={`h-6 w-2 rounded-full duration-300 ml-2 ${
                     pageLocation === "home" && "bg-gray-400"
                   } ${pageLocation === "projects" && "bg-neutral-600"} ${
                     pageLocation === "Stack" && "bg-blue-400"

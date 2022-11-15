@@ -13,6 +13,13 @@ module.exports = {
         Josefin: ["Josefin", "serif"],
         JosefinNormal: ["JosefinNormal", "serif"],
       },
+      colors: {
+        MikYellow: "#FEC601",
+        PhaBlue: "#020887",
+        PigBlue: "#38369A",
+        PineGreen: "#0B7A75",
+        SmoBlack: "#12100E",
+      },
     },
   },
   plugins: [],

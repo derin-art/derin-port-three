@@ -29,6 +29,11 @@ a {
   }
 }
 
+.grit {
+  -webkit-mask-image: url("../public/grit.png");
+  mask-image: url("../public/grit.png");
+}
+
 @font-face {
   font-family: "Ezcar";
   src: url("../public/Prata/Prata-Regular.ttf");

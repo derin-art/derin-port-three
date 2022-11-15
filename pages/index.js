@@ -1,4 +1,5 @@
 import dynamic from "next/dynamic";
+import ProjectsPages from "../components/ProjectsPages";
 import { useState } from "react";
 import { motion, AnimatePresence, useCycle } from "framer-motion";
 import { useAnimatePresence } from "use-animate-presence";
@@ -64,12 +65,28 @@ export default function Home() {
     </svg>
   );
 
+  const StackIcon = (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 24 24"
+      width="24"
+      height="24"
+      className="fill-gray-700"
+    >
+      <path fill="none" d="M0 0h24v24H0z" />
+      <path d="M20.083 10.5l1.202.721a.5.5 0 0 1 0 .858L12 17.65l-9.285-5.571a.5.5 0 0 1 0-.858l1.202-.721L12 15.35l8.083-4.85zm0 4.7l1.202.721a.5.5 0 0 1 0 .858l-8.77 5.262a1 1 0 0 1-1.03 0l-8.77-5.262a.5.5 0 0 1 0-.858l1.202-.721L12 20.05l8.083-4.85zM12.514 1.309l8.771 5.262a.5.5 0 0 1 0 .858L12 13 2.715 7.429a.5.5 0 0 1 0-.858l8.77-5.262a1 1 0 0 1 1.03 0z" />
+    </svg>
+  );
+
   return (
     <div className="w-full h-full">
       <div>
         <div className="h-screen w-full sticky top-0" key={"1"}>
-          <div className="w-full h-screen bg-blue-50 z-40 border" id="home">
-            <div className="flex sm:p-8 items-center justify-center lg:text-9xl md:text-5xl sm:text-4xl text-5xl w-full h-full">
+          <div
+            className="w-full h-screen bg-blue-100 border-t-2 border-SmoBlack z-40 grit"
+            id="home"
+          >
+            <div className="flex sm:p-8 items-center justify-center lg:text-8xl md:text-4xl sm:text-3xl text-5xl w-full h-full">
               {" "}
               <div className="sm:w-5/6 w-full font-Ezcar  p-4 text-gray-800 flex flex-col relative">
                 <div className="text-right lg:text-lg text-sm text-xs font-Abril text-gray-600 md:w-56 w-40 self-end absolute hidden sm:block">
@@ -83,7 +100,7 @@ export default function Home() {
                     {downArrow}
                   </div>
                 </div>
-                <div className="border-b border-t md:p-4 z-50">
+                <div className="border-b border-t md:p-4 z-50  border-black">
                   <div> Hi,</div>
                   <div>I&apos;m Derin </div>
                   and im a frontend Engineer
@@ -96,18 +113,24 @@ export default function Home() {
           </div>
         </div>
         <div className="h-screen w-full sticky top-0" key={"2"}>
-          <div id="Projects" className="w-full h-screen  border z-10 bg-white ">
-            <Projects></Projects>
+          <div
+            id="Projects"
+            className="w-full h-screen  z-10 bg-white border-t-2 border-MikYellow"
+          >
+            {true ? <ProjectsPages></ProjectsPages> : <Projects></Projects>}
           </div>
         </div>
         <div className="h-screen w-full sticky top-0 " key={"3"}>
-          <div className="w-full h-screen bg-blue-200 border">
+          <div className="w-full h-screen bg-white border-t-2 border-PineGreen">
             <div className="flex p-8 w-full  justify-center lg:text-7xl md:text-5xl text-4xl w-full h-full">
               {" "}
               <div className="w-5/6 font-Ezcar pt-8 hidden md:block">
                 {" "}
-                <div className="text-left w-fit text-black">STACK</div>
-                <div className="text-right -mt-16 flex flex-col text-black">
+                <div className="text-left w-fit text-gray-700 flex border-b">
+                  STACK
+                  <div>{StackIcon}</div>
+                </div>
+                <div className="text-right -mt-16 flex flex-col text-PineGreen">
                   {[
                     "REACT",
                     "TAILWIND",
