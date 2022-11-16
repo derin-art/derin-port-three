@@ -59,6 +59,11 @@ a {
   src: url("../public/Oxygen/Oxygen-Light.ttf");
 }
 
+@font-face {
+  font-family: "Krona";
+  src: url("../public/Krona_One/KronaOne-Regular.ttf");
+}
+
 @-moz-document url-prefix() {
   .scrollbar {
     overflow: auto;
@@ -69,6 +74,14 @@ a {
     outline: 1px solid slategrey !important;
     border-radius: 10px !important;
   }
+}
+
+#translate {
+  transform: translateX(100%);
+}
+
+.projectGrad {
+  background-image: linear-gradient(white, white, #e0e7ff);
 }
 
 ::-webkit-scrollbar {

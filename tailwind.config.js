@@ -12,6 +12,7 @@ module.exports = {
         Abril: ["Abril", "serif"],
         Josefin: ["Josefin", "serif"],
         JosefinNormal: ["JosefinNormal", "serif"],
+        Krona: ["Krona", "serif"],
       },
       colors: {
         MikYellow: "#FEC601",
@@ -19,6 +20,8 @@ module.exports = {
         PigBlue: "#38369A",
         PineGreen: "#0B7A75",
         SmoBlack: "#12100E",
+        ChiViolet: "#856084",
+        PinkLav: "#D4ADCF",
       },
     },
   },

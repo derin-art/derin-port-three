@@ -35,6 +35,7 @@ export default function ProjectsPages() {
                 >
                   <Link
                     key={item}
+                    scroll={false}
                     href={item.includes("AGILE") ? `/Agile` : `/E-com`}
                   >
                     <button className="flex">

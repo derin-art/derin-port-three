@@ -66,7 +66,7 @@ export default function Header() {
                 key={item.Name}
                 target={`${item.Name !== "Projects" ? "_blank" : ""}`}
                 href={item.Link}
-                className="mr-2 font-Josefin text-black"
+                className="mr-2 font-Ezcar font-bold text-black"
               >
                 {item.Name}
               </a>

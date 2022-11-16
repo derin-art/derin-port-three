@@ -83,7 +83,7 @@ export default function Home() {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.8 }}
-      exit={{ opacity: 0, marginLeft: "50px" }}
+      exit={{ opacity: 0, translateX: "50%" }}
       className="w-full h-full"
     >
       <div>
