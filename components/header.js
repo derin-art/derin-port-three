@@ -15,7 +15,7 @@ export default function Header() {
       if (position > 500) {
         setPageLocation("projects");
       }
-      if (position > 1100) {
+      if (position > 1250) {
         setPageLocation("Stack");
       }
       if (position > prev) {
@@ -108,21 +108,21 @@ export default function Header() {
                   className={`h-6 w-2 rounded-full duration-300  ${
                     pageLocation === "home" && "bg-blue-300"
                   } ${pageLocation === "projects" && "bg-neutral-400"} ${
-                    pageLocation === "Stack" && "bg-blue-800"
+                    pageLocation === "Stack" && "bg-gray-700"
                   }`}
                 ></div>
                 <div
                   className={`h-6 w-2 rounded-full duration-300 ml-2  ${
                     pageLocation === "home" && "bg-gray-700"
-                  } ${pageLocation === "projects" && "bg-black"} ${
-                    pageLocation === "Stack" && "bg-gray-700"
+                  } ${pageLocation === "projects" && "bg-MikYellow"} ${
+                    pageLocation === "Stack" && "bg-PineGreen"
                   }`}
                 ></div>
                 <div
                   className={`h-6 w-2 rounded-full duration-300 ml-2 ${
                     pageLocation === "home" && "bg-gray-400"
                   } ${pageLocation === "projects" && "bg-neutral-600"} ${
-                    pageLocation === "Stack" && "bg-blue-400"
+                    pageLocation === "Stack" && "bg-neutral-300"
                   }`}
                 ></div>
               </div>

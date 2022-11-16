@@ -19,7 +19,7 @@ export default function ProjectsPages() {
     <div className="flex h-full flex items-center justify-center">
       <div className="w-5/6 h-full relative p-8">
         <div className="w-full h-full pt-8">
-          <div className="font-Ezcar lg:text-7xl md:text-3xl text-2xl text-MikYellow border-b">
+          <div className="font-Ezcar lg:text-7xl border-gray-700 md:text-3xl text-2xl text-MikYellow border-b">
             PROJECTS
           </div>
           <div className="mt-8">
@@ -28,9 +28,9 @@ export default function ProjectsPages() {
                 <motion.div
                   className="font-Ezcar lg:text-7xl md:text-3xl flex text-2xl text-gray-700 mb-2 hover:text-blue-800 duration-300"
                   key={item}
-                  initial={{ opacity: 0, skewX: "20deg" }}
-                  whileInView={{ opacity: 1, skewX: "0deg" }}
-                  transition={{ duration: 0.7, delayChildren: 0.8 }}
+                  initial={{ opacity: 0, skewX: "20deg", marginLeft: "50px" }}
+                  whileInView={{ opacity: 1, marginLeft: "0px", skewX: "0deg" }}
+                  transition={{ duration: 0.3 }}
                   viewport={{ once: false }}
                 >
                   <Link

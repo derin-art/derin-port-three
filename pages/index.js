@@ -79,11 +79,17 @@ export default function Home() {
   );
 
   return (
-    <div className="w-full h-full">
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 0.8 }}
+      exit={{ opacity: 0, marginLeft: "50px" }}
+      className="w-full h-full"
+    >
       <div>
         <div className="h-screen w-full sticky top-0" key={"1"}>
           <div
-            className="w-full h-screen bg-blue-100 border-t-2 border-SmoBlack z-40 grit"
+            className="w-full h-screen bg-blue-100 border-t-2 border-gray-700 z-40 grit"
             id="home"
           >
             <div className="flex sm:p-8 items-center justify-center lg:text-8xl md:text-4xl sm:text-3xl text-5xl w-full h-full">
@@ -101,32 +107,69 @@ export default function Home() {
                   </div>
                 </div>
                 <div className="border-b border-t md:p-4 z-50  border-black">
-                  <div> Hi,</div>
-                  <div>I&apos;m Derin </div>
+                  <motion.div
+                    initial={{ opacity: 0, marginTop: "-50px" }}
+                    whileInView={{
+                      opacity: 1,
+                      marginTop: "0px",
+                      skewX: "0deg",
+                    }}
+                    transition={{ duration: 0.5 }}
+                  >
+                    {" "}
+                    Hi,
+                  </motion.div>
+                  <motion.div
+                    initial={{ opacity: 0, marginTop: "-50px" }}
+                    whileInView={{
+                      opacity: 1,
+                      marginTop: "0px",
+                      skewX: "0deg",
+                    }}
+                    transition={{ duration: 0.7 }}
+                  >
+                    I&apos;m Derin{" "}
+                  </motion.div>
                   and im a frontend Engineer
-                  <div className="text-sm text-gray-400">
+                  <motion.div
+                    className="text-sm text-gray-400"
+                    initial={{ opacity: 0, marginTop: "-50px" }}
+                    whileInView={{
+                      opacity: 1,
+                      marginTop: "0px",
+                      skewX: "0deg",
+                    }}
+                    transition={{ duration: 1 }}
+                  >
                     Built by OluwasoromiDerin Kehinde Owoade, 2021
-                  </div>
+                  </motion.div>
                 </div>
               </div>
             </div>
           </div>
         </div>
-        <div className="h-screen w-full sticky top-0" key={"2"}>
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.8 }}
+          exit={{ opacity: 0 }}
+          className="h-screen w-full sticky top-0"
+          key={"2"}
+        >
           <div
             id="Projects"
-            className="w-full h-screen  z-10 bg-white border-t-2 border-MikYellow"
+            className="w-full h-screen  z-10 bg-white border-t-4 border-MikYellow"
           >
             {true ? <ProjectsPages></ProjectsPages> : <Projects></Projects>}
           </div>
-        </div>
+        </motion.div>
         <div className="h-screen w-full sticky top-0 " key={"3"}>
-          <div className="w-full h-screen bg-white border-t-2 border-PineGreen">
+          <div className="w-full h-screen bg-white border-t-4 border-PineGreen">
             <div className="flex p-8 w-full  justify-center lg:text-7xl md:text-5xl text-4xl w-full h-full">
               {" "}
               <div className="w-5/6 font-Ezcar pt-8 hidden md:block">
                 {" "}
-                <div className="text-left w-fit text-gray-700 flex border-b">
+                <div className="text-left w-fit text-gray-700 flex border-b border-gray-700">
                   STACK
                   <div>{StackIcon}</div>
                 </div>
@@ -143,8 +186,16 @@ export default function Home() {
                   ].map((item) => (
                     <motion.div
                       key={item}
-                      initial={{ opacity: 0, skewX: "20deg" }}
-                      whileInView={{ opacity: 1, skewX: "0deg" }}
+                      initial={{
+                        opacity: 0,
+                        skewX: "20deg",
+                        marginRight: "50px",
+                      }}
+                      whileInView={{
+                        opacity: 1,
+                        skewX: "0deg",
+                        marginRight: "0px",
+                      }}
                       transition={{ duration: 0.6 }}
                       viewport={{ once: false }}
                     >
@@ -181,6 +232,6 @@ export default function Home() {
           </div>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 }
