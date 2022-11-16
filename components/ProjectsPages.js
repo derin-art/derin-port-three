@@ -26,7 +26,7 @@ export default function ProjectsPages() {
             {ProjectNames.map((item) => {
               return (
                 <motion.div
-                  className="font-Ezcar lg:text-7xl md:text-3xl flex text-2xl text-gray-700 mb-2 hover:text-blue-800 duration-300"
+                  className="font-Ezcar w-fit lg:text-7xl md:text-3xl group flex text-2xl text-gray-700 mb-2 duration-300"
                   key={item}
                   initial={{ opacity: 0, skewX: "20deg", marginLeft: "50px" }}
                   whileInView={{ opacity: 1, marginLeft: "0px", skewX: "0deg" }}
@@ -38,8 +38,11 @@ export default function ProjectsPages() {
                     scroll={false}
                     href={item.includes("AGILE") ? `/Agile` : `/E-com`}
                   >
-                    <button className="flex">
-                      {item} <div>{NavIcon}</div>
+                    <button className="flex group-hover:text-blue-800 duration-300">
+                      {item}{" "}
+                      <div className="group-hover:scale-150 duration-300 ml-2">
+                        {NavIcon}
+                      </div>
                     </button>
                   </Link>
                 </motion.div>

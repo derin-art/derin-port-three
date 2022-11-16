@@ -28,7 +28,7 @@ export default function ProjectSpecific({
               <div className="text-4xl mb-2 font-Ezcar border-b border-gray-500">
                 Stack
               </div>
-              <div className="flex ">
+              <div className="flex flex-wrap">
                 {Stack.map((tech, index) => {
                   console.log(index, Stack.length);
                   return (
