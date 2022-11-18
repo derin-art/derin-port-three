@@ -69,7 +69,7 @@ export default function ProjectPage() {
       Images: [agile1, agile2, agile3, agile4, agile5],
     },
     {
-      Name: "E-COMMERCE AND CRUD-APP",
+      Name: "E-COMMERCE APP",
       query: "E-com",
       OverView: (
         <p>

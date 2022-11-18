@@ -1,7 +1,11 @@
 import react, { useEffect, useState } from "react";
 import Link from "next/link";
+import { useRouter } from "next/dist/client/router";
 
 export default function Header() {
+  const router = useRouter();
+
+  const { ProjectPage } = router.query;
   const [scrollPosition, setSrollPosition] = useState(0);
   const [scrolledUp, setScrolledUp] = useState(false);
   const [pageLocation, setPageLocation] = useState("home");
@@ -109,21 +113,21 @@ export default function Header() {
                     pageLocation === "home" && "bg-blue-300"
                   } ${pageLocation === "projects" && "bg-neutral-400"} ${
                     pageLocation === "Stack" && "bg-gray-700"
-                  }`}
+                  } ${ProjectPage === "Agile" && "bg-neutral-500"}`}
                 ></div>
                 <div
                   className={`h-6 w-2 rounded-full duration-300 ml-2  ${
                     pageLocation === "home" && "bg-gray-700"
                   } ${pageLocation === "projects" && "bg-MikYellow"} ${
                     pageLocation === "Stack" && "bg-PineGreen"
-                  }`}
+                  } ${ProjectPage === "Agile" && "bg-indigo-700"}`}
                 ></div>
                 <div
                   className={`h-6 w-2 rounded-full duration-300 ml-2 ${
                     pageLocation === "home" && "bg-gray-400"
                   } ${pageLocation === "projects" && "bg-neutral-600"} ${
                     pageLocation === "Stack" && "bg-neutral-300"
-                  }`}
+                  } ${ProjectPage === "Agile" && "bg-indigo-200"}`}
                 ></div>
               </div>
             </div>
