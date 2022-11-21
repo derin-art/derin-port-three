@@ -19,14 +19,14 @@ export default function ProjectsPages() {
     <div className="flex h-full flex items-center justify-center">
       <div className="w-5/6 h-full relative p-8">
         <div className="w-full h-full pt-8">
-          <div className="font-Ezcar lg:text-7xl border-gray-700 md:text-3xl text-2xl text-MikYellow border-b">
+          <div className="font-Ezcar lg:text-7xl border-gray-700 md:text-3xl text-3xl text-MikYellow border-b">
             PROJECTS
           </div>
-          <div className="mt-8">
+          <div className="sm:mt-8 mt-4">
             {ProjectNames.map((item) => {
               return (
                 <motion.div
-                  className="font-Ezcar w-fit lg:text-7xl md:text-3xl group flex text-2xl text-gray-700 mb-2 duration-300"
+                  className="font-Ezcar w-fit lg:text-7xl md:text-3xl group flex text-xl text-gray-700 mb-2 duration-300"
                   key={item}
                   initial={{ opacity: 0, skewX: "20deg", marginLeft: "50px" }}
                   whileInView={{ opacity: 1, marginLeft: "0px", skewX: "0deg" }}
@@ -40,7 +40,7 @@ export default function ProjectsPages() {
                   >
                     <button className="flex group-hover:text-blue-800 duration-300">
                       {item}{" "}
-                      <div className="group-hover:scale-150 duration-300 ml-2">
+                      <div className="group-hover:scale-150 duration-300 ml-2 sm:block hidden">
                         {NavIcon}
                       </div>
                     </button>

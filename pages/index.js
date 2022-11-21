@@ -205,7 +205,7 @@ export default function Home() {
                 </div>
               </div>
               <div className="text-3xl flex flex-col items-center pt-8 font-Ezcar md:hidden">
-                <div className="text-gray-500 pb-2">STACK</div>
+                <div className="text-black mb-2">STACK</div>
                 {[
                   "REACT",
                   "TAILWIND",
@@ -222,7 +222,7 @@ export default function Home() {
                     whileInView={{ opacity: 1, skewX: "0deg" }}
                     transition={{ duration: 0.6 }}
                     viewport={{ once: false }}
-                    className="text-black"
+                    className="text-PineGreen"
                   >
                     {item}
                   </motion.div>

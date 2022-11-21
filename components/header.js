@@ -107,7 +107,7 @@ export default function Header() {
               >
                 LinkedIn
               </a>
-              <div className="flex absolute top-1 right-40">
+              <div className="flex absolute top-1 right-40 ">
                 <div
                   className={`h-6 w-2 rounded-full duration-300  ${
                     pageLocation === "home" && "bg-blue-300"
@@ -116,14 +116,14 @@ export default function Header() {
                   } ${ProjectPage === "Agile" && "bg-neutral-500"}`}
                 ></div>
                 <div
-                  className={`h-6 w-2 rounded-full duration-300 ml-2  ${
+                  className={`h-6 w-2 rounded-full duration-300 ml-2    ${
                     pageLocation === "home" && "bg-gray-700"
                   } ${pageLocation === "projects" && "bg-MikYellow"} ${
                     pageLocation === "Stack" && "bg-PineGreen"
                   } ${ProjectPage === "Agile" && "bg-indigo-700"}`}
                 ></div>
                 <div
-                  className={`h-6 w-2 rounded-full duration-300 ml-2 ${
+                  className={`h-6 w-2 rounded-full duration-300 ml-2  ${
                     pageLocation === "home" && "bg-gray-400"
                   } ${pageLocation === "projects" && "bg-neutral-600"} ${
                     pageLocation === "Stack" && "bg-neutral-300"
