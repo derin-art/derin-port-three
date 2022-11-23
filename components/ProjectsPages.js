@@ -1,5 +1,6 @@
 import { motion } from "framer-motion";
 import Link from "next/link";
+import { useState, useEffect } from "react";
 
 export default function ProjectsPages() {
   const NavIcon = (
@@ -15,13 +16,19 @@ export default function ProjectsPages() {
     </svg>
   );
   const ProjectNames = ["AGILE/SCRUM APP", "E-COMMERCE"];
+
   return (
     <div className="flex h-full flex items-center justify-center">
       <div className="w-5/6 h-full relative p-8">
-        <div className="w-full h-full pt-8">
-          <div className="font-Ezcar lg:text-7xl border-gray-700 md:text-3xl text-3xl text-MikYellow border-b">
+        <div className="w-full h-full pt-8 text-MikYellow">
+          <motion.div
+            initial={{ opacity: 0, skewX: "20deg", marginLeft: "50px" }}
+            whileInView={{ opacity: 1, marginLeft: "0px", skewX: "0deg" }}
+            className="text-MikYellow font-Ezcar lg:text-7xl xl:text-7xl z-50 xl:text-MikYellow border-gray-700 md:text-3xl text-3xl border-b"
+          >
             PROJECTS
-          </div>
+          </motion.div>
+
           <div className="sm:mt-8 mt-4">
             {ProjectNames.map((item) => {
               return (

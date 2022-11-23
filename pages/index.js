@@ -89,7 +89,7 @@ export default function Home() {
       <div>
         <div className="h-screen w-full sticky top-0" key={"1"}>
           <div
-            className="w-full h-screen bg-blue-100 border-t-2 border-gray-700 z-40 grit"
+            className="w-full h-screen bg-blue-100 border-t-4 border-gray-700 z-40 grit"
             id="home"
           >
             <div className="flex sm:p-8 items-center justify-center lg:text-8xl md:text-4xl sm:text-3xl text-5xl w-full h-full">
