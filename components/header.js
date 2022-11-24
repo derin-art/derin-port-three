@@ -40,6 +40,8 @@ export default function Header() {
     };
   }, []);
 
+  const alt = false;
+
   const mobileLinks = [
     { Name: "Github", Link: "https://github.com/derin-art" },
     {
@@ -55,7 +57,9 @@ export default function Header() {
       <div className="w-screen p-2 flex relative">
         {" "}
         <div
-          className={`font-Nabla text-3xl p-4 rounded-full px-6 duration-300  ${
+          className={`${
+            alt ? "font-Ezcar  text-white" : "font-Nabla"
+          } text-3xl p-4 rounded-full px-6 duration-300  ${
             pageLocation === "home" && "border-gray-300"
           } ${pageLocation === "projects" && "border-red-800"} ${
             pageLocation === "Stack" && "border-gray-400"
@@ -77,7 +81,15 @@ export default function Header() {
             );
           })}
         </div>
-        <div className="absolute right-0 flex hidden sm:block text-black">
+        <div
+          className={`absolute right-0 flex hidden sm:block ${
+            alt
+              ? pageLocation === "home"
+                ? "text-white"
+                : "text-black"
+              : "text-black"
+          }`}
+        >
           <div className="flex items-start mt-4">
             <a
               href="mailto:owoadederin6@gmail.com?subject=Contact Me"
@@ -85,7 +97,7 @@ export default function Header() {
             >
               Mail
             </a>
-            <Link href="/#Projects" className="font-Josefin ">
+            <Link href="/#Projects" className="font-Josefin  ">
               <div className="font-Ezcar font-bold cursor-pointer">
                 Projects
               </div>
@@ -110,7 +122,7 @@ export default function Header() {
               <div className="flex absolute top-1 right-40 ">
                 <div
                   className={`h-6 w-2 rounded-full duration-300  ${
-                    pageLocation === "home" && "bg-blue-300"
+                    pageLocation === "home" && "bg-PhaBlue"
                   } ${pageLocation === "projects" && "bg-neutral-400"} ${
                     pageLocation === "Stack" && "bg-gray-700"
                   } ${ProjectPage === "Agile" && "bg-neutral-500"}`}

@@ -4,6 +4,7 @@ import { useState } from "react";
 import { motion, AnimatePresence, useCycle } from "framer-motion";
 import { useAnimatePresence } from "use-animate-presence";
 import Projects from "../components/Projects";
+import NewHome from "../components/NewHome";
 
 export default function Home() {
   const [openCrud, setOpenCrud] = useState(false);
@@ -78,6 +79,8 @@ export default function Home() {
     </svg>
   );
 
+  const alt = false;
+
   return (
     <motion.div
       initial={{ opacity: 0 }}
@@ -89,62 +92,74 @@ export default function Home() {
       <div>
         <div className="h-screen w-full sticky top-0" key={"1"}>
           <div
-            className="w-full h-screen bg-blue-100 border-t-4 border-gray-700 z-40 grit"
+            className={`w-full h-screen ${
+              alt ? "bg-white" : "bg-blue-100"
+            } border-t-4 ${
+              alt ? "border-PigBlue" : "border-gray-700 grit"
+            } z-40 `}
             id="home"
           >
             <div className="flex sm:p-8 items-center justify-center lg:text-8xl md:text-4xl sm:text-3xl text-5xl w-full h-full">
               {" "}
-              <div className="sm:w-5/6 w-full font-Ezcar  p-4 text-gray-800 flex flex-col relative">
-                <div className="text-right lg:text-lg text-sm text-xs font-Abril text-gray-600 md:w-56 w-40 self-end absolute hidden sm:block">
-                  I enjoy figuring out complex apps and putting the pieces until
-                  a complete app is formed
-                </div>{" "}
-                <div className="absolute lg:bottom-10 -bottom-20 right-2 text-xl flex items-center font-bold justify-center animate-bounce  md:flex">
-                  <p className="mr-2">Scroll Down</p>
-                  <div className="rounded-full border-2 border-black ">
-                    {" "}
-                    {downArrow}
+              {alt ? (
+                <div className=" w-full font-Ezcar  p-4 text-gray-800 flex flex-col relative ">
+                  <div className="">
+                    <NewHome></NewHome>
                   </div>
                 </div>
-                <div className="border-b border-t md:p-4 z-50  border-black">
-                  <motion.div
-                    initial={{ opacity: 0, marginTop: "-50px" }}
-                    whileInView={{
-                      opacity: 1,
-                      marginTop: "0px",
-                      skewX: "0deg",
-                    }}
-                    transition={{ duration: 0.5 }}
-                  >
-                    {" "}
-                    Hi,
-                  </motion.div>
-                  <motion.div
-                    initial={{ opacity: 0, marginTop: "-50px" }}
-                    whileInView={{
-                      opacity: 1,
-                      marginTop: "0px",
-                      skewX: "0deg",
-                    }}
-                    transition={{ duration: 0.7 }}
-                  >
-                    I&apos;m Derin{" "}
-                  </motion.div>
-                  and im a frontend Engineer
-                  <motion.div
-                    className="text-sm text-gray-400"
-                    initial={{ opacity: 0, marginTop: "-50px" }}
-                    whileInView={{
-                      opacity: 1,
-                      marginTop: "0px",
-                      skewX: "0deg",
-                    }}
-                    transition={{ duration: 1 }}
-                  >
-                    Built by OluwasoromiDerin Kehinde Owoade, 2021
-                  </motion.div>
+              ) : (
+                <div className="sm:w-5/6 w-full font-Ezcar  p-4 text-gray-800 flex flex-col relative">
+                  <div className="text-right lg:text-lg text-sm text-xs font-Abril text-gray-600 md:w-56 w-40 self-end absolute hidden sm:block">
+                    I enjoy figuring out complex apps and putting the pieces
+                    until a complete app is formed
+                  </div>{" "}
+                  <div className="absolute lg:bottom-10 -bottom-20 right-2 text-xl flex items-center font-bold justify-center animate-bounce  md:flex">
+                    <p className="mr-2">Scroll Down</p>
+                    <div className="rounded-full border-2 border-black ">
+                      {" "}
+                      {downArrow}
+                    </div>
+                  </div>
+                  <div className="border-b border-t md:p-4 z-50  border-black">
+                    <motion.div
+                      initial={{ opacity: 0, marginTop: "-50px" }}
+                      whileInView={{
+                        opacity: 1,
+                        marginTop: "0px",
+                        skewX: "0deg",
+                      }}
+                      transition={{ duration: 0.5 }}
+                    >
+                      {" "}
+                      Hi,
+                    </motion.div>
+                    <motion.div
+                      initial={{ opacity: 0, marginTop: "-50px" }}
+                      whileInView={{
+                        opacity: 1,
+                        marginTop: "0px",
+                        skewX: "0deg",
+                      }}
+                      transition={{ duration: 0.7 }}
+                    >
+                      I&apos;m Derin{" "}
+                    </motion.div>
+                    and im a frontend Engineer
+                    <motion.div
+                      className="text-sm text-gray-400"
+                      initial={{ opacity: 0, marginTop: "-50px" }}
+                      whileInView={{
+                        opacity: 1,
+                        marginTop: "0px",
+                        skewX: "0deg",
+                      }}
+                      transition={{ duration: 1 }}
+                    >
+                      Built by OluwasoromiDerin Kehinde Owoade, 2021
+                    </motion.div>
+                  </div>
                 </div>
-              </div>
+              )}
             </div>
           </div>
         </div>
