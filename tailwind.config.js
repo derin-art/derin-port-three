@@ -13,6 +13,8 @@ module.exports = {
         Josefin: ["Josefin", "serif"],
         JosefinNormal: ["JosefinNormal", "serif"],
         Krona: ["Krona", "serif"],
+        CorUp: ["CorUp", "serif"],
+        PlayI: ["PlayI", "serif"],
       },
       colors: {
         MikYellow: "#FEC601",
@@ -23,6 +25,7 @@ module.exports = {
         SmoBlack: "#12100E",
         ChiViolet: "#856084",
         PinkLav: "#D4ADCF",
+        TiWhite: "#fafafa",
       },
     },
   },

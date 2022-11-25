@@ -72,7 +72,7 @@ export default function Home() {
       viewBox="0 0 24 24"
       width="24"
       height="24"
-      className="fill-gray-700"
+      className="fill-PineGreen"
     >
       <path fill="none" d="M0 0h24v24H0z" />
       <path d="M20.083 10.5l1.202.721a.5.5 0 0 1 0 .858L12 17.65l-9.285-5.571a.5.5 0 0 1 0-.858l1.202-.721L12 15.35l8.083-4.85zm0 4.7l1.202.721a.5.5 0 0 1 0 .858l-8.77 5.262a1 1 0 0 1-1.03 0l-8.77-5.262a.5.5 0 0 1 0-.858l1.202-.721L12 20.05l8.083-4.85zM12.514 1.309l8.771 5.262a.5.5 0 0 1 0 .858L12 13 2.715 7.429a.5.5 0 0 1 0-.858l8.77-5.262a1 1 0 0 1 1.03 0z" />
@@ -93,16 +93,16 @@ export default function Home() {
         <div className="h-screen w-full sticky top-0" key={"1"}>
           <div
             className={`w-full h-screen ${
-              alt ? "bg-[#06080F]" : "bg-blue-100"
+              alt ? "bg-[#011627]" : "bg-blue-100"
             } border-t-4 ${
-              alt ? "border-gray-400" : "border-gray-700 grit"
+              alt ? "border-PineGreen" : "border-gray-700 grit"
             } z-40 `}
             id="home"
           >
             <div className="flex sm:p-8 items-center justify-center lg:text-8xl md:text-4xl sm:text-3xl text-5xl w-full h-full">
               {" "}
               {alt ? (
-                <div className=" sm:w-5/6 font-Ezcar  p-4 text-gray-800 flex flex-col relative">
+                <div className=" sm:w-5/6 font-Ezcar  p-4 pt-0 text-gray-800 flex flex-col relative">
                   <div className="">
                     <NewHome></NewHome>
                   </div>
@@ -173,20 +173,20 @@ export default function Home() {
         >
           <div
             id="Projects"
-            className="w-full h-screen  z-10 bg-white border-t-4 border-MikYellow"
+            className="w-full h-screen  z-10 bg-TiWhite border-t-4 border-MikYellow"
           >
             {true ? <ProjectsPages></ProjectsPages> : <Projects></Projects>}
           </div>
         </motion.div>
         <div className="h-screen w-full sticky top-0 " key={"3"}>
-          <div className="w-full h-screen bg-white border-t-4 border-PineGreen">
+          <div className="w-full h-screen bg-TiWhite border-t-4 border-PineGreen">
             <div className="flex p-8 w-full  justify-center lg:text-7xl md:text-5xl text-4xl w-full h-full">
               {" "}
               <div className="w-5/6 font-Ezcar pt-8 hidden md:block">
                 {" "}
-                <div className="text-left w-fit text-gray-700 flex border-b border-gray-700">
+                <div className="text-left font-PlayI w-fit text-gray-700 flex border-b-4 border-gray-700">
                   STACK
-                  <div>{StackIcon}</div>
+                  <div className=" mt-3 ml-1">{StackIcon}</div>
                 </div>
                 <div className="text-right -mt-16 flex flex-col text-PineGreen">
                   {[

@@ -5,6 +5,34 @@ import { useRouter } from "next/dist/client/router";
 export default function Header() {
   const router = useRouter();
 
+  const sideDec = () => {
+    return (
+      <div className="flex absolute top-1 right-40 ">
+        <div
+          className={`h-2 w-2 rounded-full duration-300  ${
+            pageLocation === "home" && "bg-MikYellow"
+          } ${pageLocation === "projects" && "bg-neutral-400"} ${
+            pageLocation === "Stack" && "bg-gray-700"
+          } ${ProjectPage === "Agile" && "bg-neutral-500"}`}
+        ></div>
+        <div
+          className={`h-6 w-2 rounded-full duration-300 ml-2    ${
+            pageLocation === "home" && "bg-gray-700"
+          } ${pageLocation === "projects" && "bg-MikYellow"} ${
+            pageLocation === "Stack" && "bg-PineGreen"
+          } ${ProjectPage === "Agile" && "bg-indigo-700"}`}
+        ></div>
+        <div
+          className={`h-4 w-2 rounded-full duration-300 ml-2  ${
+            pageLocation === "home" && "bg-gray-400"
+          } ${pageLocation === "projects" && "bg-neutral-600"} ${
+            pageLocation === "Stack" && "bg-neutral-300"
+          } ${ProjectPage === "Agile" && "bg-indigo-200"}`}
+        ></div>
+      </div>
+    );
+  };
+
   const { ProjectPage } = router.query;
   const [scrollPosition, setSrollPosition] = useState(0);
   const [scrolledUp, setScrolledUp] = useState(false);
@@ -123,7 +151,8 @@ export default function Header() {
               >
                 LinkedIn
               </a>
-              <div className="flex absolute top-1 right-40 ">
+              {sideDec()}
+              <div className="flex absolute top-1 right-40 hidden">
                 <div
                   className={`h-6 w-2 rounded-full duration-300  ${
                     pageLocation === "home" && "bg-MikYellow"

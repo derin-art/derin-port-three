@@ -64,6 +64,16 @@ a {
   src: url("../public/Krona_One/KronaOne-Regular.ttf");
 }
 
+@font-face {
+  font-family: "CorUp";
+  src: url("../public/Cormorant_Upright/CormorantUpright-Light.ttf");
+}
+
+@font-face {
+  font-family: "PlayI";
+  src: url("../public/PT_Serif/PTSerif-Italic.ttf");
+}
+
 @-moz-document url-prefix() {
   .scrollbar {
     overflow: auto;
@@ -95,7 +105,11 @@ a {
 }
 
 ::-webkit-scrollbar-thumb {
-  background-color: rgba(20, 20, 20, 0.695) !important;
+  background-color: #141414b1 !important;
   outline: 1px solid rgba(112, 128, 144, 0) !important;
   border-radius: 10px !important;
+}
+
+#xl {
+  color: #000000e8;
 }

@@ -24,7 +24,7 @@ export default function ProjectsPages() {
           <motion.div
             initial={{ opacity: 0, skewX: "20deg", marginLeft: "50px" }}
             whileInView={{ opacity: 1, marginLeft: "0px", skewX: "0deg" }}
-            className="text-MikYellow font-Ezcar lg:text-7xl xl:text-7xl z-50 xl:text-MikYellow border-gray-700 md:text-3xl text-3xl border-b"
+            className="text-MikYellow font-PlayI lg:text-7xl xl:text-7xl z-50 xl:text-MikYellow border-gray-700 md:text-3xl text-3xl border-b-4"
           >
             PROJECTS
           </motion.div>
