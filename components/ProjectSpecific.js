@@ -60,7 +60,7 @@ export default function ProjectSpecific({
   return (
     <div className={`w-5/6 p-8 h-full`}>
       <div className="pt-8">
-        <div className="font-Ezcar lg:text-7xl border-gray-700 md:text-3xl border-b relative text-right text-2xl text-indigo-700">
+        <div className="font-PlayI lg:text-7xl border-gray-700 md:text-3xl border-b relative text-right text-2xl text-indigo-700">
           {Name}
         </div>
 
