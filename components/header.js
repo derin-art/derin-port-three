@@ -40,7 +40,7 @@ export default function Header() {
     };
   }, []);
 
-  const alt = false;
+  const alt = true;
 
   const mobileLinks = [
     { Name: "Github", Link: "https://github.com/derin-art" },
@@ -58,7 +58,11 @@ export default function Header() {
         {" "}
         <div
           className={`${
-            alt ? "font-Ezcar  text-white" : "font-Nabla"
+            alt
+              ? pageLocation === "home"
+                ? "font-Ezcar  text-white"
+                : "font-Nabla"
+              : "font-Nabla"
           } text-3xl p-4 rounded-full px-6 duration-300  ${
             pageLocation === "home" && "border-gray-300"
           } ${pageLocation === "projects" && "border-red-800"} ${
@@ -82,13 +86,13 @@ export default function Header() {
           })}
         </div>
         <div
-          className={`absolute right-0 flex hidden sm:block ${
-            alt
+          className={`absolute right-0 flex hidden duration-300 sm:block ${
+            router.pathname === "/" && alt
               ? pageLocation === "home"
                 ? "text-white"
                 : "text-black"
               : "text-black"
-          }`}
+          } `}
         >
           <div className="flex items-start mt-4">
             <a
@@ -122,7 +126,7 @@ export default function Header() {
               <div className="flex absolute top-1 right-40 ">
                 <div
                   className={`h-6 w-2 rounded-full duration-300  ${
-                    pageLocation === "home" && "bg-PhaBlue"
+                    pageLocation === "home" && "bg-MikYellow"
                   } ${pageLocation === "projects" && "bg-neutral-400"} ${
                     pageLocation === "Stack" && "bg-gray-700"
                   } ${ProjectPage === "Agile" && "bg-neutral-500"}`}

@@ -16,6 +16,7 @@ module.exports = {
       },
       colors: {
         MikYellow: "#FEC601",
+        ForBlack: "#06080F",
         PhaBlue: "#020887",
         PigBlue: "#38369A",
         PineGreen: "#0B7A75",

@@ -79,7 +79,7 @@ export default function Home() {
     </svg>
   );
 
-  const alt = false;
+  const alt = true;
 
   return (
     <motion.div
@@ -93,16 +93,16 @@ export default function Home() {
         <div className="h-screen w-full sticky top-0" key={"1"}>
           <div
             className={`w-full h-screen ${
-              alt ? "bg-white" : "bg-blue-100"
+              alt ? "bg-[#06080F]" : "bg-blue-100"
             } border-t-4 ${
-              alt ? "border-PigBlue" : "border-gray-700 grit"
+              alt ? "border-gray-400" : "border-gray-700 grit"
             } z-40 `}
             id="home"
           >
             <div className="flex sm:p-8 items-center justify-center lg:text-8xl md:text-4xl sm:text-3xl text-5xl w-full h-full">
               {" "}
               {alt ? (
-                <div className=" w-full font-Ezcar  p-4 text-gray-800 flex flex-col relative ">
+                <div className=" sm:w-5/6 font-Ezcar  p-4 text-gray-800 flex flex-col relative">
                   <div className="">
                     <NewHome></NewHome>
                   </div>

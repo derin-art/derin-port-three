@@ -4,20 +4,16 @@ export default function NewHome() {
 
   return (
     <div>
-      <div className="flex flex-col w-full p-4 text-SmoBlack uppercase">
-        {mainText.map((item) => {
+      <div className="flex flex-col w-full p-4 text-white uppercase justify-center">
+        {mainText.map((item, index) => {
           return (
             <motion.div
               key={item}
-              initial={{ opacity: 0, skewX: "20deg", marginLeft: "50px" }}
-              whileInView={{ opacity: 1, marginLeft: "0px", skewX: "0deg" }}
-              transition={{ duration: 0.3 }}
-              viewport={{ once: false }}
-              className={`font-Ezcar lg:text-9xl md:text-4xl p-6 sm:text-3xl border-b border-black ${
-                item === "a frontend dev." && "text-PigBlue"
-              }`}
+              className={`font-Ezcar lg:text-8xl mb-0 md:text-4xl p-4 px-0 py-6 flex items-center  sm:text-3xl border-b border-white   ${
+                item === "a frontend dev." && "text-gray-400"
+              } ${index === 0 && "border-t"}`}
             >
-              {item}
+              <p className="mt-2">{item}</p>
             </motion.div>
           );
         })}
