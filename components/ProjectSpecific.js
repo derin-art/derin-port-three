@@ -2,6 +2,7 @@ import Image from "next/image";
 import GalleryIcon from "../public/Icons/galleryIcon";
 import GitIcon from "../public/Icons/githubIcon";
 import GlobeIcon from "../public/Icons/globeIcon";
+import BackIcon from "../public/Icons/backIcon";
 import { motion } from "framer-motion";
 import { AnimatePresence } from "framer-motion";
 import GalleryComponent from "../components/GalleryComponent";
@@ -17,11 +18,14 @@ export default function ProjectSpecific({
   Execution,
   Stack,
   Images,
+  Links,
+  router,
 }) {
   const icons = [
+    { icon: BackIcon, link: false, back: true },
     { icon: GalleryIcon, link: false },
-    { icon: GitIcon, link: true },
-    { icon: GlobeIcon, link: true },
+    { icon: GitIcon, link: true, realLink: Links.GitHub },
+    { icon: GlobeIcon, link: true, realLink: Links.Live },
   ];
   const variants = {
     out: {
@@ -70,7 +74,8 @@ export default function ProjectSpecific({
               if (icon.link) {
                 return (
                   <motion.a
-                    href=""
+                    href={icon.realLink}
+                    target="_blank"
                     className="left-8  rounded-lg mb-20"
                     initial={{ opacity: 0, translateX: "-100px" }}
                     animate={{ opacity: 1, translateX: "0px" }}
@@ -82,6 +87,24 @@ export default function ProjectSpecific({
                       "fill-indigo-700 hover:fill-gray-600 duration-300"
                     )}
                   </motion.a>
+                );
+              } else if (icon.back) {
+                return (
+                  <motion.button
+                    onClick={() => {
+                      router.push("/");
+                    }}
+                    className="left-8  rounded-lg mb-20"
+                    initial={{ opacity: 0, translateX: "-100px" }}
+                    animate={{ opacity: 1, translateX: "0px" }}
+                    transition={{ delay: 0.7 }}
+                  >
+                    {icon.icon(
+                      "30",
+                      "30",
+                      "fill-indigo-700 hover:fill-gray-600 duration-300"
+                    )}
+                  </motion.button>
                 );
               } else {
                 return (

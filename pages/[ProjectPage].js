@@ -67,6 +67,11 @@ export default function ProjectPage() {
       ),
       Stack: ["NextJs", "TailWind", "MongoDB", "FireBase"],
       Images: [agile1, agile2, agile3, agile4, agile5],
+      Links: {
+        LinkName: "AGILE",
+        GitHub: "https://github.com/derin-art/Agile",
+        Live: "https://agile-hazel.vercel.app/",
+      },
     },
     {
       Name: "E-COMMERCE APP",
@@ -106,6 +111,11 @@ export default function ProjectPage() {
       ),
       Stack: ["ReactJs", "TailWind", "MongoDB", "ExpressJs", "NodeJs"],
       Images: [porP2, portP3, Crud2],
+      Links: {
+        LinkName: "E-COMMERCE",
+        GitHub: "https://github.com/derin-art/store-front",
+        Live: "https://luminous-panda-691ede.netlify.app/",
+      },
     },
   ];
 
@@ -129,6 +139,8 @@ export default function ProjectPage() {
               Stack={Project.Stack}
               query={Project.query}
               key={Project.Name}
+              Links={Project.Links}
+              router={router}
             ></ProjectSpecific>
           );
         }
