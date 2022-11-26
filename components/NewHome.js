@@ -22,13 +22,13 @@ export default function NewHome() {
           return (
             <motion.div
               key={item}
-              className={`font-PlayI  lg:text-9xl mb-0 md:text-4xl p-4 px-0 py-2 flex items-center  sm:text-3xl border-white   ${
+              className={`font-PlayI  xl:text-9xl lg:text-7xl mb-0 md:text-5xl p-4 px-0 py-2 flex items-center sm:text-3xl text-3xl border-white   ${
                 item === "a frontend dev." && ""
               } ${index === 0 && ""}`}
             >
               <p className="mt-2">{item}</p>
               {item === "Hi," && (
-                <div className="absolute right-0 text-3xl animate-bounce flex flex-col items-center justify-center">
+                <div className="absolute right-0 lg:text-3xl text-base lg:top-10 -top-20 animate-bounce flex flex-col items-center justify-center">
                   scroll down
                   {scrollDown}
                 </div>

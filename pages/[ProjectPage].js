@@ -125,7 +125,7 @@ export default function ProjectPage() {
       animate={{ opacity: 1, translateX: "0%" }}
       transition={{ duration: 0.8 }}
       exit={{ opacity: 0, translateX: "-50%" }}
-      className="h-screen w-screen flex items-center justify-center border-t-4 border-indigo-700 bg-white"
+      className="h-screen w-screen flex items-center justify-center border-t-4 border-indigo-700 bg-TiWhite"
     >
       {projectData.map((Project) => {
         if (Project.query === ProjectPage) {

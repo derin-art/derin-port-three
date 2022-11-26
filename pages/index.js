@@ -219,8 +219,10 @@ export default function Home() {
                   ))}
                 </div>
               </div>
-              <div className="text-3xl flex flex-col items-center pt-8 font-Ezcar md:hidden">
-                <div className="text-black mb-2">STACK</div>
+              <div className="text-2xl flex flex-col items-center pt-8 font-Ezcar md:hidden">
+                <div className="text-black mb-2 font-PlayI border-b-4 border-gray-700 text-3xl">
+                  STACK
+                </div>
                 {[
                   "REACT",
                   "TAILWIND",

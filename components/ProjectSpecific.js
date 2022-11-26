@@ -45,6 +45,74 @@ export default function ProjectSpecific({
     },
   };
 
+  const iconsWithLinks = (mobile = false) => {
+    return icons.map((icon) => {
+      if (icon.link) {
+        return (
+          <motion.a
+            href={icon.realLink}
+            target="_blank"
+            className={`${!mobile && "left-8 mb-20"}  rounded-lg `}
+            initial={{ opacity: 0, translateX: "-100px" }}
+            animate={{ opacity: 1, translateX: "0px" }}
+            transition={{ delay: 0.7 }}
+            key={icon.icon}
+          >
+            {icon.icon(
+              "30",
+              "30",
+              "fill-indigo-700 hover:fill-gray-600 duration-300"
+            )}
+          </motion.a>
+        );
+      } else if (icon.back) {
+        return (
+          <motion.button
+            onClick={() => {
+              router.push("/");
+            }}
+            className={`${!mobile && "left-8 mb-20"}  rounded-lg`}
+            initial={{ opacity: 0, translateX: "-100px" }}
+            animate={{ opacity: 1, translateX: "0px" }}
+            transition={{ delay: 0.7 }}
+            key={icon.icon}
+          >
+            {icon.icon(
+              "30",
+              "30",
+              "fill-indigo-700 hover:fill-gray-600 duration-300"
+            )}
+          </motion.button>
+        );
+      } else {
+        return (
+          <motion.button
+            onClick={() => {
+              setGalleryOpen((prev) => !prev);
+            }}
+            className={`${!mobile && "left-8 mb-20 "}   rounded-lg "`}
+            initial={{ opacity: 0, translateX: "-100px" }}
+            animate={{ opacity: 1, translateX: "0px" }}
+            transition={{ delay: 0.7 }}
+            key={icon.icon}
+          >
+            {!galleryOpen
+              ? icon.icon(
+                  "30",
+                  "30",
+                  "fill-indigo-700 hover:fill-gray-600 duration-300"
+                )
+              : bookIcon(
+                  "30",
+                  "30",
+                  "fill-indigo-700 hover:fill-gray-600 duration-300"
+                )}
+          </motion.button>
+        );
+      }
+    });
+  };
+
   const bookIcon = (height, width, style) => {
     return (
       <svg
@@ -62,76 +130,33 @@ export default function ProjectSpecific({
 
   const [galleryOpen, setGalleryOpen] = useState(false);
   return (
-    <div className={`w-5/6 p-8 h-full`}>
-      <div className="pt-8">
+    <div className={`w-5/6 md:p-8 h-full`}>
+      <div className="pt-8 ">
         <div className="font-PlayI lg:text-7xl border-gray-700 md:text-3xl border-b relative text-right text-2xl text-indigo-700">
           {Name}
         </div>
-
-        <motion.div>
-          <div className="flex  flex-col left-8 absolute mt-4">
-            {icons.map((icon) => {
-              if (icon.link) {
-                return (
-                  <motion.a
-                    href={icon.realLink}
-                    target="_blank"
-                    className="left-8  rounded-lg mb-20"
-                    initial={{ opacity: 0, translateX: "-100px" }}
-                    animate={{ opacity: 1, translateX: "0px" }}
-                    transition={{ delay: 0.7 }}
-                  >
-                    {icon.icon(
-                      "30",
-                      "30",
-                      "fill-indigo-700 hover:fill-gray-600 duration-300"
-                    )}
-                  </motion.a>
-                );
-              } else if (icon.back) {
-                return (
-                  <motion.button
-                    onClick={() => {
-                      router.push("/");
-                    }}
-                    className="left-8  rounded-lg mb-20"
-                    initial={{ opacity: 0, translateX: "-100px" }}
-                    animate={{ opacity: 1, translateX: "0px" }}
-                    transition={{ delay: 0.7 }}
-                  >
-                    {icon.icon(
-                      "30",
-                      "30",
-                      "fill-indigo-700 hover:fill-gray-600 duration-300"
-                    )}
-                  </motion.button>
-                );
-              } else {
-                return (
-                  <motion.button
-                    onClick={() => {
-                      setGalleryOpen((prev) => !prev);
-                    }}
-                    className="left-8  rounded-lg mb-20"
-                    initial={{ opacity: 0, translateX: "-100px" }}
-                    animate={{ opacity: 1, translateX: "0px" }}
-                    transition={{ delay: 0.7 }}
-                  >
-                    {!galleryOpen
-                      ? icon.icon(
-                          "30",
-                          "30",
-                          "fill-indigo-700 hover:fill-gray-600 duration-300"
-                        )
-                      : bookIcon(
-                          "30",
-                          "30",
-                          "fill-indigo-700 hover:fill-gray-600 duration-300"
-                        )}
-                  </motion.button>
-                );
-              }
+        <div className="relative pb-4 mb-4 md:hidden">
+          <motion.div className="flex space-x-2 text-right absolute right-0">
+            {iconsWithLinks(true)}
+          </motion.div>
+        </div>
+        <div className="md:hidden font-PlayI">
+          <div className="ml-2">Stack</div>
+          <div className="text-sm flex font-PlayI space-x-2 md:hidden w-full flex-wrap">
+            {Stack.map((tech, index) => {
+              console.log(index, Stack.length);
+              return (
+                <div className="ml-2" key={index}>
+                  {tech}
+                  {index + 1 === Stack.length ? "." : ","}
+                </div>
+              );
             })}
+          </div>
+        </div>
+        <motion.div className="">
+          <div className="hidden flex-col left-8 absolute mt-4 md:flex">
+            {iconsWithLinks()}
           </div>
           <AnimatePresence>
             <motion.div
@@ -140,7 +165,7 @@ export default function ProjectSpecific({
               initial="out"
               exit={"out"}
               key={galleryOpen}
-              className="flex absolute w-5/6"
+              className="flex absolute w-5/6 h-[450px] overflow-auto md:h-fit"
             >
               {galleryOpen ? (
                 <div className="absolute w-full">
@@ -150,16 +175,16 @@ export default function ProjectSpecific({
                   ></GalleryComponentAlt>
                 </div>
               ) : (
-                <motion.div className="flex mt-4 text-SmoBlack ">
-                  <section className="font-Ezcar w-2/4 p-3 h-fit border border-gray-300 bg-gray-100">
+                <motion.div className="flex flex-col md:flex-row mt-4 text-SmoBlack md:text-base text-sm">
+                  <section className="font-Ezcar md:w-2/4 p-3 h-fit border border-gray-300 bg-gray-100">
                     <div className="text-4xl mb-2 font-Ezcar border-b border-gray-500">
                       OverView
                     </div>
                     <div className="">{OverView}</div>
                   </section>
 
-                  <div className="flex flex-col font-Ezcar w-2/4 p-2 pt-0 ml-8 text-SmoBlack">
-                    <section className="font-Ezcar border p-3 border-gray-300 bg-gray-100">
+                  <div className="flex flex-col font-Ezcar md:w-2/4 md:p-2 pt-0 md:ml-8 text-SmoBlack">
+                    <section className="font-Ezcar border p-3 border-gray-300 bg-gray-100 md:block hidden">
                       <div className="text-4xl mb-2 font-Ezcar border-b border-gray-500">
                         Stack
                       </div>
@@ -167,7 +192,7 @@ export default function ProjectSpecific({
                         {Stack.map((tech, index) => {
                           console.log(index, Stack.length);
                           return (
-                            <div className="ml-2">
+                            <div className="ml-2" key={index}>
                               {tech}
                               {index + 1 === Stack.length ? "." : ","}
                             </div>

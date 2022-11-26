@@ -5,38 +5,11 @@ import { useRouter } from "next/dist/client/router";
 export default function Header() {
   const router = useRouter();
 
-  const sideDec = () => {
-    return (
-      <div className="flex absolute top-1 right-40 ">
-        <div
-          className={`h-2 w-2 rounded-full duration-300  ${
-            pageLocation === "home" && "bg-MikYellow"
-          } ${pageLocation === "projects" && "bg-neutral-400"} ${
-            pageLocation === "Stack" && "bg-gray-700"
-          } ${ProjectPage === "Agile" && "bg-neutral-500"}`}
-        ></div>
-        <div
-          className={`h-6 w-2 rounded-full duration-300 ml-2    ${
-            pageLocation === "home" && "bg-gray-700"
-          } ${pageLocation === "projects" && "bg-MikYellow"} ${
-            pageLocation === "Stack" && "bg-PineGreen"
-          } ${ProjectPage === "Agile" && "bg-indigo-700"}`}
-        ></div>
-        <div
-          className={`h-4 w-2 rounded-full duration-300 ml-2  ${
-            pageLocation === "home" && "bg-gray-400"
-          } ${pageLocation === "projects" && "bg-neutral-600"} ${
-            pageLocation === "Stack" && "bg-neutral-300"
-          } ${ProjectPage === "Agile" && "bg-indigo-200"}`}
-        ></div>
-      </div>
-    );
-  };
-
   const { ProjectPage } = router.query;
   const [scrollPosition, setSrollPosition] = useState(0);
   const [scrolledUp, setScrolledUp] = useState(false);
   const [pageLocation, setPageLocation] = useState("home");
+  const [pageLocationMobile, setPageLocationMobile] = useState("home");
   const handleScroll = () => {
     const position = window.pageYOffset;
 
@@ -50,6 +23,15 @@ export default function Header() {
       if (position > 1250) {
         setPageLocation("Stack");
       }
+      if (position < 650) {
+        setPageLocationMobile("home");
+      }
+      if (position > 650) {
+        setPageLocationMobile("projects");
+      }
+      if (position > 1250) {
+        setPageLocationMobile("Stack");
+      }
       if (position > prev) {
         console.log(prev);
         setScrolledUp(true);
@@ -58,6 +40,34 @@ export default function Header() {
       }
       return position;
     });
+  };
+
+  const sideDec = () => {
+    return (
+      <div className="flex absolute top-1 right-40 ">
+        <div
+          className={`h-2 w-2 rounded-full duration-300  ${
+            pageLocation === "home" && "bg-MikYellow"
+          } ${pageLocation === "projects" && "bg-neutral-400"} ${
+            pageLocation === "Stack" && "bg-gray-700"
+          } ${onSpecificPage && "bg-neutral-500"}`}
+        ></div>
+        <div
+          className={`h-6 w-2 rounded-full duration-300 ml-2    ${
+            pageLocation === "home" && "bg-gray-700"
+          } ${pageLocation === "projects" && "bg-MikYellow"} ${
+            pageLocation === "Stack" && "bg-PineGreen"
+          } ${onSpecificPage && "bg-indigo-700"}`}
+        ></div>
+        <div
+          className={`h-4 w-2 rounded-full duration-300 ml-2  ${
+            pageLocation === "home" && "bg-gray-400"
+          } ${pageLocation === "projects" && "bg-neutral-600"} ${
+            pageLocation === "Stack" && "bg-neutral-300"
+          } ${onSpecificPage && "bg-indigo-200"}`}
+        ></div>
+      </div>
+    );
   };
 
   useEffect(() => {
@@ -79,6 +89,9 @@ export default function Header() {
     { Name: "Mail", Link: "mailto:owoadederin6@gmail.com?subject=Contact Me" },
     { Name: "Projects", Link: "/#Projects" },
   ];
+
+  const onSpecificPage = ProjectPage === "Agile" || ProjectPage === "E-com";
+  console.log("simz", onSpecificPage);
 
   return (
     <div className="w-full flex fixed z-50 top-0 items-center justify-center">
@@ -106,7 +119,13 @@ export default function Header() {
                 key={item.Name}
                 target={`${item.Name !== "Projects" ? "_blank" : ""}`}
                 href={item.Link}
-                className="mr-2 font-Ezcar font-bold text-black"
+                className={`mr-2 font-Ezcar font-bold ${
+                  router.pathname === "/" && alt
+                    ? pageLocationMobile === "home"
+                      ? "text-white"
+                      : "text-black"
+                    : "text-black"
+                } `}
               >
                 {item.Name}
               </a>
@@ -158,21 +177,21 @@ export default function Header() {
                     pageLocation === "home" && "bg-MikYellow"
                   } ${pageLocation === "projects" && "bg-neutral-400"} ${
                     pageLocation === "Stack" && "bg-gray-700"
-                  } ${ProjectPage === "Agile" && "bg-neutral-500"}`}
+                  } ${onSpecificPage && "bg-neutral-500"}`}
                 ></div>
                 <div
                   className={`h-6 w-2 rounded-full duration-300 ml-2    ${
                     pageLocation === "home" && "bg-gray-700"
                   } ${pageLocation === "projects" && "bg-MikYellow"} ${
                     pageLocation === "Stack" && "bg-PineGreen"
-                  } ${ProjectPage === "Agile" && "bg-indigo-700"}`}
+                  } ${onSpecificPage && "bg-indigo-700"}`}
                 ></div>
                 <div
                   className={`h-6 w-2 rounded-full duration-300 ml-2  ${
                     pageLocation === "home" && "bg-gray-400"
                   } ${pageLocation === "projects" && "bg-neutral-600"} ${
                     pageLocation === "Stack" && "bg-neutral-300"
-                  } ${ProjectPage === "Agile" && "bg-indigo-200"}`}
+                  } ${onSpecificPage && "bg-indigo-200"}`}
                 ></div>
               </div>
             </div>
