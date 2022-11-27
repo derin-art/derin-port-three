@@ -32,14 +32,14 @@ export default function ProjectSpecific({
       opacity: 0,
       x: -40,
       transition: {
-        duration: 0.75,
+        duration: 0.55,
       },
     },
     in: {
       opacity: 1,
       x: 0,
       transition: {
-        duration: 0.75,
+        duration: 0.55,
         delay: 0.3,
       },
     },
@@ -165,10 +165,10 @@ export default function ProjectSpecific({
               initial="out"
               exit={"out"}
               key={galleryOpen}
-              className="flex absolute w-5/6 h-[450px] overflow-auto md:h-fit"
+              className="flex absolute w-5/6 h-[460px] overflow-auto md:overflow-hidden md:h-fit"
             >
               {galleryOpen ? (
-                <div className="absolute w-full">
+                <div className="w-full">
                   <GalleryComponentAlt
                     imgArray={Images}
                     key="Gallery"
@@ -176,7 +176,7 @@ export default function ProjectSpecific({
                 </div>
               ) : (
                 <motion.div className="flex flex-col md:flex-row mt-4 text-SmoBlack md:text-base text-sm">
-                  <section className="font-Ezcar md:w-2/4 p-3 h-fit border border-gray-300 bg-gray-100">
+                  <section className="font-Ezcar md:w-2/4 p-3 h-fit border border-gray-300 bg-white rounded">
                     <div className="text-4xl mb-2 font-Ezcar border-b border-gray-500">
                       OverView
                     </div>
@@ -184,7 +184,7 @@ export default function ProjectSpecific({
                   </section>
 
                   <div className="flex flex-col font-Ezcar md:w-2/4 md:p-2 pt-0 md:ml-8 text-SmoBlack">
-                    <section className="font-Ezcar border p-3 border-gray-300 bg-gray-100 md:block hidden">
+                    <section className="font-Ezcar border p-3 border-gray-300 bg-white md:block hidden rounded">
                       <div className="text-4xl mb-2 font-Ezcar border-b border-gray-500">
                         Stack
                       </div>
@@ -201,7 +201,7 @@ export default function ProjectSpecific({
                       </div>
                     </section>
 
-                    <section className="font-Ezcar  mt-4 border border-gray-300 p-3 bg-gray-100">
+                    <section className="font-Ezcar  mt-4 border border-gray-300 p-3 bg-white rounded">
                       <div className="text-4xl mb-2 font-Ezcar text-black border-b border-gray-500">
                         Scope
                       </div>

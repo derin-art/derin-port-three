@@ -61,7 +61,7 @@ export default function Header() {
         ></div>
         <div
           className={`h-4 w-2 rounded-full duration-300 ml-2  ${
-            pageLocation === "home" && "bg-gray-400"
+            pageLocation === "home" && "bg-PineGreen"
           } ${pageLocation === "projects" && "bg-neutral-600"} ${
             pageLocation === "Stack" && "bg-neutral-300"
           } ${onSpecificPage && "bg-indigo-200"}`}
@@ -171,29 +171,6 @@ export default function Header() {
                 LinkedIn
               </a>
               {sideDec()}
-              <div className="flex absolute top-1 right-40 hidden">
-                <div
-                  className={`h-6 w-2 rounded-full duration-300  ${
-                    pageLocation === "home" && "bg-MikYellow"
-                  } ${pageLocation === "projects" && "bg-neutral-400"} ${
-                    pageLocation === "Stack" && "bg-gray-700"
-                  } ${onSpecificPage && "bg-neutral-500"}`}
-                ></div>
-                <div
-                  className={`h-6 w-2 rounded-full duration-300 ml-2    ${
-                    pageLocation === "home" && "bg-gray-700"
-                  } ${pageLocation === "projects" && "bg-MikYellow"} ${
-                    pageLocation === "Stack" && "bg-PineGreen"
-                  } ${onSpecificPage && "bg-indigo-700"}`}
-                ></div>
-                <div
-                  className={`h-6 w-2 rounded-full duration-300 ml-2  ${
-                    pageLocation === "home" && "bg-gray-400"
-                  } ${pageLocation === "projects" && "bg-neutral-600"} ${
-                    pageLocation === "Stack" && "bg-neutral-300"
-                  } ${onSpecificPage && "bg-indigo-200"}`}
-                ></div>
-              </div>
             </div>
           </div>
         </div>

@@ -9,14 +9,14 @@ export default function GalleryComponentAlt({ imgArray }) {
       opacity: 0,
       x: 40,
       transition: {
-        duration: 0.75,
+        duration: 0.55,
       },
     },
     in: {
       opacity: 1,
       x: 0,
       transition: {
-        duration: 0.75,
+        duration: 0.55,
         delay: 0.3,
       },
     },
@@ -56,7 +56,7 @@ export default function GalleryComponentAlt({ imgArray }) {
 
   return (
     <div>
-      <div className="font-Ezcar mb-6 mt-4 sm:mb-0 sm:mt-0">
+      <div className="font-Ezcar font-bold mb-6 mt-4 sm:mb-0 sm:mt-0">
         {imgNo + 1} of {imgArray.length}
         <div className="flex w-full mt-1 mb-1 relative">
           <button
@@ -104,7 +104,7 @@ export default function GalleryComponentAlt({ imgArray }) {
             )}
           </button>
         </div>
-        <div className="w-2/4 flex  justify-center max-w-[500px] relative border">
+        <div className="w-2/4 flex  justify-center max-w-[500px] relative">
           <AnimatePresence>
             <motion.div
               key={imgNo}
