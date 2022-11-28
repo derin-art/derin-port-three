@@ -8,6 +8,9 @@ body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+
+  scroll-snap-points-y: repeat(100vh);
+  scroll-snap-type: y proximity;
 }
 
 a {
@@ -112,4 +115,16 @@ a {
 
 #xl {
   color: #000000e8;
+}
+
+.snapCont {
+  scroll-snap-type: y mandatory;
+}
+
+.snapChild {
+  scroll-snap-align: start;
+}
+
+.altSnapCont {
+  scroll-snap-type: y mandatory;
 }

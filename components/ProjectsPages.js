@@ -19,21 +19,21 @@ export default function ProjectsPages() {
 
   return (
     <div className="flex h-full flex items-center justify-center">
-      <div className="w-5/6 h-full relative p-8">
+      <div className="w-5/6 h-full relative md:p-8 p-4 pt-8">
         <div className="w-full h-full pt-8 text-MikYellow">
           <motion.div
             initial={{ opacity: 0, skewX: "20deg", marginLeft: "50px" }}
             whileInView={{ opacity: 1, marginLeft: "0px", skewX: "0deg" }}
-            className="text-MikYellow font-PlayI lg:text-7xl xl:text-7xl z-50 xl:text-MikYellow border-gray-700 md:text-3xl text-3xl border-b-4"
+            className="text-MikYellow font-PlayI lg:text-7xl xl:text-7xl z-50 xl:text-MikYellow border-gray-700 md:text-5xl text-3xl border-b-4"
           >
             PROJECTS
           </motion.div>
 
-          <div className="sm:mt-8 mt-4">
+          <div className="sm:mt-8 mt-2">
             {ProjectNames.map((item) => {
               return (
                 <motion.div
-                  className="font-Ezcar w-fit lg:text-7xl md:text-3xl group flex text-xl text-gray-700 mb-2 duration-300"
+                  className="font-Ezcar w-fit lg:text-7xl md:text-5xl group flex text-2xl text-black md:text-gray-700 md:mb-2 duration-300"
                   key={item}
                   initial={{ opacity: 0, skewX: "20deg", marginLeft: "50px" }}
                   whileInView={{ opacity: 1, marginLeft: "0px", skewX: "0deg" }}

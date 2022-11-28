@@ -1,13 +1,65 @@
 import dynamic from "next/dynamic";
 import ProjectsPages from "../components/ProjectsPages";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { motion, AnimatePresence, useCycle } from "framer-motion";
 import { useAnimatePresence } from "use-animate-presence";
 import Projects from "../components/Projects";
 import NewHome from "../components/NewHome";
+import useMediaQuery from "../hooks/useMediaQuery";
 
 export default function Home() {
   const [openCrud, setOpenCrud] = useState(false);
+  const [scrollPosition, setSrollPosition] = useState(0);
+  const [scrolledUp, setScrolledUp] = useState(false);
+  const [pageLocation, setPageLocation] = useState("home");
+  const [pageLocationMobile, setPageLocationMobile] = useState("home");
+  const [snapPointers, setSnapPointers] = useState("home");
+
+  const { height, width } = useMediaQuery();
+
+  const isSmall = width ? width < 550 : false;
+  const handleScroll = () => {
+    const position = window.pageYOffset;
+
+    setSrollPosition((prev) => {
+      if (position < 500) {
+        setPageLocation("home");
+      }
+      if (position > 500) {
+        setPageLocation("projects");
+      }
+      if (position > 1250) {
+        setPageLocation("Stack");
+      }
+      if (position < 650) {
+        setPageLocationMobile("home");
+      }
+      if (position > 650) {
+        setPageLocationMobile("projects");
+      }
+      if (position > 1250) {
+        setPageLocationMobile("Stack");
+      }
+      if (position < 50) {
+        setSnapPointers("home");
+      }
+      if (position > 50) {
+        setSnapPointers("projects");
+      }
+      if (position > 1000) {
+        setSnapPointers("Stack");
+      }
+
+      if (position > prev) {
+        console.log(prev);
+        setScrolledUp(true);
+      } else {
+        setScrolledUp(false);
+      }
+      return position;
+    });
+  };
+
   const FadeAlt = () => ({
     in: {
       style: {
@@ -47,6 +99,14 @@ export default function Home() {
     initial: "visible",
     duration: "0.5s",
   });
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll, { passive: true });
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
 
   /*  <div>
        <button onClick={() => animatedText.togglePresence()}>Toggle</button>
@@ -89,8 +149,13 @@ export default function Home() {
       exit={{ opacity: 0, translateX: "50%" }}
       className="w-full h-full"
     >
-      <div>
-        <div className="h-screen w-full sticky top-0" key={"1"}>
+      <div className="">
+        <div
+          className={`h-screen w-full sticky top-0 ${
+            snapPointers === "home" && "snap-start"
+          }`}
+          key={"1"}
+        >
           <div
             className={`w-full h-screen ${
               alt ? "bg-[#011627]" : "bg-blue-100"
@@ -168,7 +233,9 @@ export default function Home() {
           animate={{ opacity: 1 }}
           transition={{ duration: 0.8 }}
           exit={{ opacity: 0 }}
-          className="h-screen w-full sticky top-0"
+          className={`h-screen w-full sticky top-0 ${
+            !isSmall ? snapPointers === "projects" && "snap-center" : ""
+          }`}
           key={"2"}
         >
           <div
@@ -178,8 +245,15 @@ export default function Home() {
             {true ? <ProjectsPages></ProjectsPages> : <Projects></Projects>}
           </div>
         </motion.div>
-        <div className="h-screen w-full sticky top-0 " key={"3"}>
-          <div className="w-full h-screen bg-TiWhite border-t-4 border-PineGreen">
+        <div
+          className={`h-screen w-full sticky top-0 ${
+            !isSmall ? snapPointers === "Stack" && "snap-center" : ""
+          } `}
+          key={"3"}
+        >
+          <div
+            className={`w-full h-screen bg-TiWhite border-t-4 border-PineGreen `}
+          >
             <div className="flex p-8 w-full  justify-center lg:text-7xl md:text-5xl text-4xl w-full h-full">
               {" "}
               <div className="w-5/6 font-Ezcar pt-8 hidden md:block">

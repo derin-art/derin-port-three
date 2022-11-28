@@ -130,13 +130,13 @@ export default function ProjectSpecific({
 
   const [galleryOpen, setGalleryOpen] = useState(false);
   return (
-    <div className={`w-5/6 md:p-8 h-full`}>
+    <div className={`w-5/6 md:p-8 h-full pt-2`}>
       <div className="pt-8 ">
-        <div className="font-PlayI lg:text-7xl border-gray-700 md:text-3xl border-b relative text-right text-2xl text-indigo-700">
+        <div className="font-PlayI lg:text-7xl border-gray-700 md:text-3xl border-b relative text-right text-3xl text-indigo-700">
           {Name}
         </div>
         <div className="relative pb-4 mb-4 md:hidden">
-          <motion.div className="flex space-x-2 text-right absolute right-0">
+          <motion.div className="flex space-x-6 text-right absolute right-0">
             {iconsWithLinks(true)}
           </motion.div>
         </div>
@@ -165,7 +165,7 @@ export default function ProjectSpecific({
               initial="out"
               exit={"out"}
               key={galleryOpen}
-              className="flex absolute w-5/6 h-[460px] overflow-auto md:overflow-hidden md:h-fit"
+              className="flex absolute w-5/6  md:overflow-hidden md:h-fit"
             >
               {galleryOpen ? (
                 <div className="w-full">
@@ -176,11 +176,13 @@ export default function ProjectSpecific({
                 </div>
               ) : (
                 <motion.div className="flex flex-col md:flex-row mt-4 text-SmoBlack md:text-base text-sm">
-                  <section className="font-Ezcar md:w-2/4 p-3 h-fit border border-gray-300 bg-white rounded">
-                    <div className="text-4xl mb-2 font-Ezcar border-b border-gray-500">
+                  <section className="font-Ezcar md:w-2/4 p-3 md:h-fit border border-gray-300 bg-white rounded">
+                    <div className="md:text-4xl text-2xl mb-2 font-Ezcar border-b border-gray-500">
                       OverView
                     </div>
-                    <div className="">{OverView}</div>
+                    <div className="h-[150px] overflow-auto md:h-fit">
+                      {OverView}
+                    </div>
                   </section>
 
                   <div className="flex flex-col font-Ezcar md:w-2/4 md:p-2 pt-0 md:ml-8 text-SmoBlack">
@@ -201,11 +203,13 @@ export default function ProjectSpecific({
                       </div>
                     </section>
 
-                    <section className="font-Ezcar  mt-4 border border-gray-300 p-3 bg-white rounded">
-                      <div className="text-4xl mb-2 font-Ezcar text-black border-b border-gray-500">
+                    <section className="font-Ezcar   mt-4 border border-gray-300 p-3 bg-white rounded">
+                      <div className="md:text-4xl text-2xl mb-2 font-Ezcar text-black border-b border-gray-500">
                         Scope
                       </div>
-                      <div>{Scope}</div>
+                      <div className="h-[150px] overflow-auto md:h-fit">
+                        {Scope}
+                      </div>
                     </section>
                   </div>
                 </motion.div>

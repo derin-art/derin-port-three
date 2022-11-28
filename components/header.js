@@ -104,7 +104,7 @@ export default function Header() {
                 ? "font-Ezcar  text-white"
                 : "font-Nabla"
               : "font-Nabla"
-          } text-3xl p-4 rounded-full px-6 duration-300  ${
+          } md:text-3xl p-4 pt-2 rounded-full px-6 duration-300  ${
             pageLocation === "home" && "border-gray-300"
           } ${pageLocation === "projects" && "border-red-800"} ${
             pageLocation === "Stack" && "border-gray-400"

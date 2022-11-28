@@ -26,9 +26,15 @@ export default function NewHome() {
                 item === "a frontend dev." && ""
               } ${index === 0 && ""}`}
             >
-              <p className="mt-2">{item}</p>
-              {item === "Hi," && (
-                <div className="absolute right-0 lg:text-3xl text-base lg:top-10 -top-20 animate-bounce flex flex-col items-center justify-center">
+              <p className="md:mt-2">{item}</p>
+              {index === 0 && (
+                <div className="absolute right-0 lg:text-3xl text-base lg:top-10 -top-20 animate-bounce hidden md:flex flex-col items-center justify-center">
+                  scroll down
+                  {scrollDown}
+                </div>
+              )}
+              {index === mainText.length - 1 && (
+                <div className="absolute right-0 lg:text-3xl text-base lg:top-10 top-6 animate-bounce flex flex-col md:hidden items-center justify-center">
                   scroll down
                   {scrollDown}
                 </div>
