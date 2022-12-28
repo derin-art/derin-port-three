@@ -15,7 +15,12 @@ export default function ProjectsPages() {
       <path d="M12 22C6.477 22 2 17.523 2 12S6.477 2 12 2s10 4.477 10 10-4.477 10-10 10zm0-2a8 8 0 1 0 0-16 8 8 0 0 0 0 16zm-5-8.5L16 8l-3.5 9.002L11 13l-4-1.5z" />
     </svg>
   );
-  const ProjectNames = ["AGILE/SCRUM APP", "E-COMMERCE"];
+  const ProjectNames = [
+    { name: "E-COMMERCE", href: `/E-com` },
+    { name: "E-COM CRUD", href: "/Crud" },
+    { name: "AGILE/SCRUM APP", href: `/Agile` },
+    { name: "THIS PORTFOLIO", href: "/" },
+  ];
 
   return (
     <div className="flex h-full flex items-center justify-center">
@@ -34,19 +39,15 @@ export default function ProjectsPages() {
               return (
                 <motion.div
                   className="font-Ezcar w-fit lg:text-7xl md:text-5xl group flex text-2xl text-black md:text-gray-700 md:mb-2 duration-300"
-                  key={item}
+                  key={item.name}
                   initial={{ opacity: 0, skewX: "20deg", marginLeft: "50px" }}
                   whileInView={{ opacity: 1, marginLeft: "0px", skewX: "0deg" }}
-                  transition={{ duration: 0.3 }}
+                  transition={{ duration: 0.6 }}
                   viewport={{ once: false }}
                 >
-                  <Link
-                    key={item}
-                    scroll={false}
-                    href={item.includes("AGILE") ? `/Agile` : `/E-com`}
-                  >
+                  <Link key={item.name} scroll={false} href={item.href}>
                     <button className="flex group-hover:text-blue-800 duration-300">
-                      {item}{" "}
+                      {item.name}{" "}
                       <div className="group-hover:scale-150 duration-300 ml-2 sm:block hidden">
                         {NavIcon}
                       </div>

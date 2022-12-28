@@ -51,7 +51,6 @@ export default function Home() {
       }
 
       if (position > prev) {
-        console.log(prev);
         setScrolledUp(true);
       } else {
         setScrolledUp(false);
@@ -150,14 +149,9 @@ export default function Home() {
       className="w-full h-full"
     >
       <div className="">
-        <div
-          className={`h-screen w-full sticky top-0 ${
-            snapPointers === "home" && "snap-start"
-          }`}
-          key={"1"}
-        >
+        <div className={`h-screen w-full sticky top-0 `} key={"1"}>
           <div
-            className={`w-full h-screen ${
+            className={`w-full h-screen overflow-hiddden ${
               alt ? "bg-[#011627]" : "bg-blue-100"
             } border-t-4 ${
               alt ? "border-PineGreen" : "border-gray-700 grit"
@@ -233,14 +227,14 @@ export default function Home() {
           animate={{ opacity: 1 }}
           transition={{ duration: 0.8 }}
           exit={{ opacity: 0 }}
-          className={`h-screen w-full sticky top-0 ${
+          className={`h-screen w-full sticky top-0 overflow-hidden ${
             !isSmall ? snapPointers === "projects" && "snap-center" : ""
           }`}
           key={"2"}
         >
           <div
             id="Projects"
-            className="w-full h-screen  z-10 bg-TiWhite border-t-4 border-MikYellow"
+            className="w-full h-screen  z-10 bg-TiWhite border-t-4 border-MikYellow overflow-hidden"
           >
             {true ? <ProjectsPages></ProjectsPages> : <Projects></Projects>}
           </div>

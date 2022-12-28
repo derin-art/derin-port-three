@@ -141,10 +141,9 @@ export default function ProjectSpecific({
           </motion.div>
         </div>
         <div className="md:hidden font-PlayI">
-          <div className="ml-2">Stack</div>
+          <div className="ml-2 font-bold">Stack</div>
           <div className="text-sm flex font-PlayI space-x-2 md:hidden w-full flex-wrap">
             {Stack.map((tech, index) => {
-              console.log(index, Stack.length);
               return (
                 <div className="ml-2" key={index}>
                   {tech}
@@ -180,7 +179,7 @@ export default function ProjectSpecific({
                     <div className="md:text-4xl text-2xl mb-2 font-Ezcar border-b border-gray-500">
                       OverView
                     </div>
-                    <div className="h-[150px] overflow-auto md:h-fit">
+                    <div className="h-[120px] overflow-auto md:h-fit">
                       {OverView}
                     </div>
                   </section>
@@ -192,7 +191,6 @@ export default function ProjectSpecific({
                       </div>
                       <div className="flex flex-wrap">
                         {Stack.map((tech, index) => {
-                          console.log(index, Stack.length);
                           return (
                             <div className="ml-2" key={index}>
                               {tech}
@@ -207,7 +205,7 @@ export default function ProjectSpecific({
                       <div className="md:text-4xl text-2xl mb-2 font-Ezcar text-black border-b border-gray-500">
                         Scope
                       </div>
-                      <div className="h-[150px] overflow-auto md:h-fit">
+                      <div className="h-[120px] overflow-auto md:h-fit">
                         {Scope}
                       </div>
                     </section>

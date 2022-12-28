@@ -7,14 +7,21 @@ import agile5 from "../public/ProjectImages/agile5.png";
 import Crud2 from "../public/ProjectImages/Crud2.png";
 import porP2 from "../public/ProjectImages/porP2.jpg";
 import portP3 from "../public/ProjectImages/portP3.png";
+import Ecom1 from "../public/ProjectImages/Ecom1.png";
+import Ecom2 from "../public/ProjectImages/Ecom2.png";
+import Ecom3 from "../public/ProjectImages/Ecom3.png";
+import Ecom4 from "../public/ProjectImages/Ecom4.png";
+import Ecom5 from "../public/ProjectImages/Ecom5n.png";
+import Vert1 from "../public/ProjectImages/Vert1.png";
+import Vert2 from "../public/ProjectImages/Vert2.png";
+import Vert3 from "../public/ProjectImages/Vert3.png";
+import Vert4 from "../public/ProjectImages/Vert4.png";
 import ProjectSpecific from "../components/ProjectSpecific";
 import { useRouter } from "next/dist/client/router";
 export default function ProjectPage() {
   const router = useRouter();
 
   const { ProjectPage } = router.query;
-
-  console.log(ProjectPage);
 
   const projectData = [
     {
@@ -24,7 +31,7 @@ export default function ProjectPage() {
         <p>
           {" "}
           The most complex project i&apos;ve built so far, a Team Agile and
-          Scrum app that is meant to give a Team, Agile and Scrum tools and
+          Scrum app that is meant to give a Team, Agile and Scrum tools andy
           Communication tools. The primary objective of this project was to
           build an App to coordinate, manage and communicate with a selected
           group of people who would be the team. This app was built was built
@@ -79,12 +86,9 @@ export default function ProjectPage() {
       OverView: (
         <p>
           {" "}
-          A project that actually comprises of two apps, An E-commerce App and a
-          C.R.U.D app. The C.R.U.D app was built with NodeJs, ExpressJs and
-          MongoDB, and handles the data that is fed to the E-commerce app on
-          request. It is essentially the backend interface for the E-commerce
-          App. The C.R.U.D also features a SignIn feature. The E-commerce was
-          built with react and tailwind and enabled through useContext.
+          An E-com app built and designed by me. I built this project in Nextjs,
+          with an eye for performance, making use of server side rendering, next
+          image e.t.c to improve performance
         </p>
       ),
       Scope: (
@@ -93,8 +97,8 @@ export default function ProjectPage() {
           This project was my first capstone. I imagined it as how an actual
           online store would run, so it had to not just be the E-commerce but a
           Crud app behind it to add new items, edit them and delete them. Keys
-          features were the use of a login system for the Crud app and
-          useContext architecture for the E-commerce app.
+          features were the use of a user/login system, Redux state management,
+          wishlisting system, and a buying history record.
         </p>
       ),
       Execution: (
@@ -109,12 +113,64 @@ export default function ProjectPage() {
           </ul>
         </div>
       ),
-      Stack: ["ReactJs", "TailWind", "MongoDB", "ExpressJs", "NodeJs"],
-      Images: [porP2, portP3, Crud2],
+      Stack: [
+        "Nextjs",
+        "TailWind",
+        "MongoDB",
+        "Cloudinary",
+        "Framer Motion",
+        "Redux",
+        "TypeScript",
+        "Firebase",
+      ],
+      Images: [Ecom1, Ecom2, Ecom3, Ecom4, Ecom5],
       Links: {
         LinkName: "E-COMMERCE",
-        GitHub: "https://github.com/derin-art/store-front",
-        Live: "https://luminous-panda-691ede.netlify.app/",
+        GitHub: "https://github.com/derin-art/VertFront",
+        Live: "https://vert-front.vercel.app/",
+      },
+    },
+    {
+      Name: "E-COM CRUD",
+      query: "Crud",
+      OverView: <p> A Crud app that serves the ecom.</p>,
+      Scope: (
+        <p className="">
+          {" "}
+          The entire point of this project was to get more farmiliar with apis,
+          and design and build a project with everything i had learned in mind
+          previously. On this project i also wanted to try to bridge the gap
+          between api responses and what the user saw on screen, I made use of
+          toastify to send specific error responses for various errors. I also
+          leveraged Cloudinary and Multiparty to store my image urls. But
+          primarly this project contains all the apis that E-com uses.
+        </p>
+      ),
+      Execution: (
+        <div>
+          <ul>
+            After completing this project, there are little changes I would make
+            if I was doing it again;
+            <li className="mt-1">
+              1. I would use Nextjs to avoid hosting an independent ExpressJs
+              backend
+            </li>
+          </ul>
+        </div>
+      ),
+      Stack: [
+        "Nextjs",
+        "TailWind",
+        "MongoDB",
+        "Cloudinary",
+        "Framer Motion",
+        "TypeScript",
+      ],
+      Images: [Vert1, Vert2, Vert3, Vert4],
+      Links: {
+        LinkName: "E-COM CRUD",
+        GitHub: "https://github.com/derin-art/VertCrud",
+        Live: "https://vert-crud-8d3s.vercel.app/",
       },
     },
   ];
@@ -129,6 +185,7 @@ export default function ProjectPage() {
     >
       {projectData.map((Project) => {
         if (Project.query === ProjectPage) {
+          console.log(Project.query, ProjectPage);
           return (
             <ProjectSpecific
               Execution={Project.Execution}

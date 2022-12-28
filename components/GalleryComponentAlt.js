@@ -104,7 +104,7 @@ export default function GalleryComponentAlt({ imgArray }) {
             )}
           </button>
         </div>
-        <div className="w-2/4 flex  justify-center max-w-[500px] relative">
+        <div className="w-2/4 flex  justify-center max-w-[550px] relative">
           <AnimatePresence>
             <motion.div
               key={imgNo}

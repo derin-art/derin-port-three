@@ -33,7 +33,6 @@ export default function Header() {
         setPageLocationMobile("Stack");
       }
       if (position > prev) {
-        console.log(prev);
         setScrolledUp(true);
       } else {
         setScrolledUp(false);
@@ -90,8 +89,10 @@ export default function Header() {
     { Name: "Projects", Link: "/#Projects" },
   ];
 
-  const onSpecificPage = ProjectPage === "Agile" || ProjectPage === "E-com";
-  console.log("simz", onSpecificPage);
+  const onSpecificPage =
+    ProjectPage === "Agile" ||
+    ProjectPage === "E-com" ||
+    ProjectPage === "Crud";
 
   return (
     <div className="w-full flex fixed z-50 top-0 items-center justify-center">
