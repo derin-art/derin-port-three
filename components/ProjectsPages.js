@@ -17,6 +17,7 @@ export default function ProjectsPages() {
   );
   const ProjectNames = [
     { name: "E-COMMERCE", href: `/E-com` },
+    { name: "LANDING PAGE", href: `/landing` },
     { name: "E-COM CRUD", href: "/Crud" },
     { name: "AGILE/SCRUM APP", href: `/Agile` },
     { name: "THIS PORTFOLIO", href: "/" },

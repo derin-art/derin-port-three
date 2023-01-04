@@ -7,6 +7,9 @@ import agile5 from "../public/ProjectImages/agile5.png";
 import Crud2 from "../public/ProjectImages/Crud2.png";
 import porP2 from "../public/ProjectImages/porP2.jpg";
 import portP3 from "../public/ProjectImages/portP3.png";
+import Land1 from "../public/ProjectImages/Land1.png";
+import Land2 from "../public/ProjectImages/Land2.png";
+import Land3 from "../public/ProjectImages/Land3.png";
 import Ecom1 from "../public/ProjectImages/Ecom1.png";
 import Ecom2 from "../public/ProjectImages/Ecom2.png";
 import Ecom3 from "../public/ProjectImages/Ecom3.png";
@@ -171,6 +174,58 @@ export default function ProjectPage() {
         LinkName: "E-COM CRUD",
         GitHub: "https://github.com/derin-art/VertCrud",
         Live: "https://vert-crud-8d3s.vercel.app/",
+      },
+    },
+    {
+      Name: "LANDING PAGE",
+      query: "landing",
+      OverView: (
+        <p>
+          {" "}
+          A Landing page built with Nextjs and some technologies I wanted to
+          learn.
+        </p>
+      ),
+      Scope: (
+        <p className="">
+          A landing page built with Chartjs, Nextjs, Framer motion, react
+          parallax and animated cursor. I wanted to learn this technologies, so
+          what better way than to use them for something. This was a pretty
+          straight forward process, I don’t think the performance of this app is
+          bad, but in the future i would probably like to focus particularly on
+          that aspect of the app. Animations and flashy things can really slow
+          down sites, especially on mobile. Although, I used Next dynamic
+          imports to improve the performance on mobile, i have feeling that i
+          can still squeeze a lot more out it in terms of performance.
+        </p>
+      ),
+      Execution: (
+        <div>
+          <ul>
+            This was a pretty straight forward process, I don’t think the
+            performance of this app is bad, but in the future i would probably
+            like to focus particularly on that aspect of the app. Animations and
+            flashy things can really slow down sites, especially on mobile.
+            Although, I used Next dynamic imports to improve the performance on
+            mobile, i have feeling that i can still squeeze a lot more out it in
+            terms of performance.
+          </ul>
+        </div>
+      ),
+      Stack: [
+        "Nextjs",
+        "TailWind",
+        "Framer Motion",
+        "TypeScript",
+        "React-Parallax",
+        "Animated-Cusor",
+        "ChartJs",
+      ],
+      Images: [Land1, Land2, Land3],
+      Links: {
+        LinkName: "E-COM CRUD",
+        GitHub: "https://github.com/derin-art/landing",
+        Live: "https://landing-five-umber.vercel.app/",
       },
     },
   ];
