@@ -124,7 +124,12 @@ export default function Header() {
               );
             } else {
               return (
-                <a href={item.link} key={index} target="_blank">
+                <a
+                  href={item.link}
+                  key={index}
+                  target="_blank"
+                  rel="noreferrer"
+                >
                   {item.icon("24", "24", "fill-black  ")}
                 </a>
               );
