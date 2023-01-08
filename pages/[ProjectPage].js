@@ -56,7 +56,10 @@ export default function ProjectPage() {
           eventually end on, “an app to connect and coordinate teams equipped
           with agile and scrum technologies”. I decided on key features like the
           existence of team data that could be edited and basic agile features
-          like a backlog, a story map, and a sprint planner.
+          like a backlog, a story map, and a sprint planner. I thought about the
+          process of managing multiple user story and thought a drag and drop
+          system would add to the user experience, so this technology was
+          implemented across most of the app.
         </p>
       ),
       Execution: (
@@ -107,7 +110,10 @@ export default function ProjectPage() {
           online store would run, so it had to not just be the E-commerce but a
           Crud app behind it to add new items, edit them and delete them. Keys
           features were the use of a user/login system, Redux state management,
-          wishlisting system, and a buying history record.
+          wishlisting system, and a buying history record. To improve the
+          performance of this app i made use of the getStaticProps function as
+          opposed to getServerSide props, as this is an Ecom and the behind it
+          data does not change very much from session to session.
         </p>
       ),
       Execution: (
