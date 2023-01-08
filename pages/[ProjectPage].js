@@ -75,7 +75,13 @@ export default function ProjectPage() {
           </ol>
         </div>
       ),
-      Stack: ["NextJs", "TailWind", "MongoDB", "FireBase"],
+      Stack: [
+        "NextJs",
+        "TailWind",
+        "MongoDB",
+        "FireBase",
+        "React Drag and Drop",
+      ],
       Images: [agile1, agile2, agile3, agile4, agile5],
       Links: {
         LinkName: "AGILE",
@@ -232,11 +238,11 @@ export default function ProjectPage() {
 
   return (
     <motion.div
-      initial={{ opacity: 0, translateX: "-50%" }}
-      animate={{ opacity: 1, translateX: "0%" }}
+      initial={{ opacity: 0, translateY: "50%" }}
+      animate={{ opacity: 1, translateY: "0%" }}
       transition={{ duration: 0.8 }}
-      exit={{ opacity: 0, translateX: "-50%" }}
-      className="h-screen w-screen flex items-center justify-center border-t-4 border-indigo-700 bg-TiWhite"
+      exit={{ opacity: 0, translateY: "-50%" }}
+      className="h-fit w-full flex items-center justify-center bg-white"
     >
       {projectData.map((Project) => {
         if (Project.query === ProjectPage) {

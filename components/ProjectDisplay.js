@@ -61,7 +61,13 @@ export default function ProjectDisplay({ page, setPage }) {
           </ol>
         </div>
       ),
-      Stack: ["NextJs", "TailWind", "MongoDB", "FireBase"],
+      Stack: [
+        "NextJs",
+        "TailWind",
+        "MongoDB",
+        "FireBase",
+        "React Drag and Drop",
+      ],
       Images: [agile1, agile2, agile3, agile4, agile5],
     },
     {
