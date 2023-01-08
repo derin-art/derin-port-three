@@ -136,8 +136,8 @@ export default function ProjectSpecific({
     { name: "Scope", data: Scope },
   ];
   return (
-    <div className={`w-full md:p-4 pt-8 h-full  relative`}>
-      <div className=" border absolute right-2 md:hidden top-40 rounded-full p-1 backdrop-blur-sm">
+    <div className={`w-full md:p-4 pt-8 h-screen  relative bg-white`}>
+      <div className=" border absolute right-2 md:hidden top-40 rounded-full p-1 backdrop-blur-sm ">
         <motion.div className="flex flex-col space-y-6 z-50 text-right  right-2 sticky top-40 ">
           {iconsWithLinks(true)}
         </motion.div>
@@ -160,7 +160,7 @@ export default function ProjectSpecific({
             })}
           </div>
         </div>
-        <motion.div className="w-full flex justify-center">
+        <motion.div className="w-full flex justify-center bg-white">
           <div className="hidden flex-col left-8 absolute mt-4 md:flex z-50 top-40">
             {iconsWithLinks()}
           </div>
@@ -171,7 +171,7 @@ export default function ProjectSpecific({
               initial="out"
               exit={"out"}
               key={galleryOpen}
-              className="flex absolute w-4/5  item-center  md:overflow-hidden md:h-fit"
+              className="flex absolute w-4/5  item-center  md:overflow-hidden md:h-fit bg-white"
             >
               {galleryOpen ? (
                 <div className="w-full">
@@ -181,12 +181,12 @@ export default function ProjectSpecific({
                   ></GalleryComponentAlt>
                 </div>
               ) : (
-                <motion.div className="flex flex-col w-full lg:p-8">
+                <motion.div className="flex flex-col w-full lg:p-8 ">
                   {read.map((item) => {
                     return (
                       <div
                         key={item.name}
-                        className=" lg:w-4/5 w-11/12 p-4 lg:p-8 font-Abril border mb-4 rounded-2xl"
+                        className=" lg:w-4/5 w-11/12 p-4 lg:p-8 font-Abril border mb-4 rounded-2xl text-black"
                       >
                         <div className="font-bold">{item.name}</div>
                         <div className="w-full lg:text-sm text-xs">

@@ -76,7 +76,7 @@ export default function ProjectsPages() {
                             className="object-cover 2xl:h-[250px] xl:h-[250px] xl:w-[400px] 2xl:w-[400px] grit rounded-2xl "
                           ></motion.img>
 
-                          <div className="lg:text-xs text-xs font-JosefinNormal font-bold uppercase">
+                          <div className="lg:text-xs text-black text-xs font-Abril font-bold uppercase">
                             {project.name}
                           </div>
                         </motion.div>

@@ -252,7 +252,6 @@ export default function ProjectPage() {
     >
       {projectData.map((Project) => {
         if (Project.query === ProjectPage) {
-          console.log(Project.query, ProjectPage);
           return (
             <ProjectSpecific
               Execution={Project.Execution}
