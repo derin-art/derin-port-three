@@ -10,8 +10,6 @@ module.exports = {
         Ezcar: ["Ezcar", "serif"],
         Nabla: ["Nabla", "serif"],
         Abril: ["Abril", "serif"],
-        Josefin: ["Josefin", "serif"],
-        JosefinNormal: ["JosefinNormal", "serif"],
         Krona: ["Krona", "serif"],
         CorUp: ["CorUp", "serif"],
         PlayI: ["PlayI", "serif"],

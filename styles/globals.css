@@ -43,21 +43,6 @@ a {
 }
 
 @font-face {
-  font-family: "Nabla";
-  src: url("../public/Nabla/Nabla-Regular-VariableFont_EDPT\,EHLT.ttf");
-}
-
-@font-face {
-  font-family: "Josefin";
-  src: url("../public/Josefin_Sans/JosefinSans-Italic-VariableFont_wght.ttf");
-}
-
-@font-face {
-  font-family: "JosefinNormal";
-  src: url("../public/Montserrat/Montserrat-VariableFont_wght.ttf");
-}
-
-@font-face {
   font-family: "Abril";
   src: url("../public/Oxygen/Oxygen-Light.ttf");
 }
@@ -65,11 +50,6 @@ a {
 @font-face {
   font-family: "Krona";
   src: url("../public/Krona_One/KronaOne-Regular.ttf");
-}
-
-@font-face {
-  font-family: "CorUp";
-  src: url("../public/Cormorant_Upright/CormorantUpright-Light.ttf");
 }
 
 @font-face {
