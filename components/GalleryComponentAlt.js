@@ -56,11 +56,13 @@ export default function GalleryComponentAlt({ imgArray }) {
 
   return (
     <div>
-      <div className="font-Ezcar font-bold mb-6 mt-4 sm:mb-0 sm:mt-0">
-        {imgNo + 1} of {imgArray.length}
-        <div className="flex w-full mt-1 mb-1 relative">
+      <div className="font-Abril font-bold mb-6 mt-4 sm:mb-0 sm:mt-0">
+        <div className="ml-2 ">
+          {imgNo + 1} of {imgArray.length}
+        </div>
+        <div className="flex w-11/12 mt-1 mb-1 relative md:ml-0 ml-2 ">
           <button
-            className={`font-Ezcar mr-4 bg-slate-800 md:hidden block text-white p-2 rounded md:text-base text-sm ${
+            className={`font-Abril bg-slate-800 md:hidden block text-white p-2 rounded md:text-base text-xs ${
               imgNo === 0 ? "bg-red-500 cursor-not-allowed" : ""
             }`}
             onClick={() => {
@@ -71,7 +73,7 @@ export default function GalleryComponentAlt({ imgArray }) {
             Prev
           </button>
           <button
-            className={`font-Ezcar ml-4 absolute right-0 md:hidden block bg-slate-800 text-white p-2 md:text-base text-sm rounded ${
+            className={`font-Abril  absolute right-0 md:hidden block bg-slate-800 text-white p-2 md:text-base text-xs rounded ${
               imgNo === imgArray.length - 1
                 ? "bg-red-500 cursor-not-allowed"
                 : ""
@@ -100,11 +102,11 @@ export default function GalleryComponentAlt({ imgArray }) {
             {ArrowLeft(
               "24",
               "24",
-              `${imgNo === 0 ? "fill-red-600" : "fill-black"} duration-300`
+              `${imgNo === 0 ? "fill-red-600" : "fill-black"} duration-300 `
             )}
           </button>
         </div>
-        <div className="w-2/4 flex  justify-center max-w-[550px] relative">
+        <div className="lg:w-2/4 flex w-11/12  justify-center max-w-[550px] relative">
           <AnimatePresence>
             <motion.div
               key={imgNo}
@@ -119,7 +121,7 @@ export default function GalleryComponentAlt({ imgArray }) {
                   return (
                     <img
                       alt="ScreenShots of Project"
-                      className="sm:max-h-72 sm:h-72 border border-black max-h-56 "
+                      className="sm:max-h-72 sm:h-72 border border-black  "
                       src={item.src}
                       key={index}
                     ></img>

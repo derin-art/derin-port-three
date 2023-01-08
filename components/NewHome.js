@@ -1,4 +1,6 @@
 import { motion } from "framer-motion";
+import headShot from "../public/ProjectImages/headShot2.jpg";
+import Image from "next/image";
 export default function NewHome() {
   const mainText = ["Hi,", "i'm derin,", "a frontend dev."];
 
@@ -17,31 +19,31 @@ export default function NewHome() {
 
   return (
     <div>
-      <div className="flex flex-col w-full p-4 pt-0 border-y-4 text-white uppercase justify-center">
-        {mainText.map((item, index) => {
-          return (
-            <motion.div
-              key={item}
-              className={`font-PlayI  xl:text-9xl lg:text-7xl mb-0 md:text-5xl p-4 px-0 py-2 flex items-center sm:text-3xl text-3xl border-white   ${
-                item === "a frontend dev." && ""
-              } ${index === 0 && ""}`}
-            >
-              <p className="md:mt-2">{item}</p>
-              {index === 0 && (
-                <div className="absolute right-0 lg:text-3xl text-base lg:top-10 -top-20 animate-bounce hidden md:flex flex-col items-center justify-center">
-                  scroll down
-                  {scrollDown}
-                </div>
-              )}
-              {index === mainText.length - 1 && (
-                <div className="absolute right-0 lg:text-3xl text-base lg:top-10 top-6 animate-bounce flex flex-col md:hidden items-center justify-center">
-                  scroll down
-                  {scrollDown}
-                </div>
-              )}
-            </motion.div>
-          );
-        })}
+      <div className="flex flex-col w-full text-black text-center  items-center  justify-center">
+        <Image
+          src={headShot.src}
+          alt="My passport picture"
+          height={100}
+          width={100}
+          className="rounded-full z-30  "
+          unoptimized={true}
+        ></Image>
+        <motion.div
+          style={{ display: "inline-block", overflow: "hidden" }}
+          className="mt-5"
+        >
+          <motion.div
+            initial={{ opacity: 1, y: "100%" }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: false }}
+            transition={{ duration: 0.7 }}
+          >
+            {" "}
+            Hi, i&apos;m Derin and i&apos;m a fullstack engineer
+          </motion.div>
+        </motion.div>
+        <div className="blurry-gradient"></div>
+        <div className="blurry-gradientII top-20"></div>
       </div>
     </div>
   );

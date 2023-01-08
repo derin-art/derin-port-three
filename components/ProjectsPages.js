@@ -1,4 +1,9 @@
 import { motion } from "framer-motion";
+import Ecom2 from "../public/ProjectImages/Ecom2.png";
+import Land1 from "../public/ProjectImages/Land1.png";
+import Vert2 from "../public/ProjectImages/Vert1.png";
+import agile2 from "../public/ProjectImages/agile1.png";
+import Image from "next/image";
 import Link from "next/link";
 import { useState, useEffect } from "react";
 
@@ -16,45 +21,69 @@ export default function ProjectsPages() {
     </svg>
   );
   const ProjectNames = [
-    { name: "E-COMMERCE", href: `/E-com` },
-    { name: "LANDING PAGE", href: `/landing` },
-    { name: "E-COM CRUD", href: "/Crud" },
-    { name: "AGILE/SCRUM APP", href: `/Agile` },
-    { name: "THIS PORTFOLIO", href: "/" },
+    { name: "E-Commerce", href: `/E-com`, img: Ecom2 },
+    { name: "E-Com Management system", href: "/Crud", img: Vert2 },
+
+    { name: "AGILE/Scrum app", href: `/Agile`, img: agile2 },
+    { name: "Landing Page", href: `/landing`, img: Land1 },
   ];
+  const finalArray = [];
+  const chunkSize = 2;
+  for (let i = 0; i < ProjectNames.length; i += chunkSize) {
+    const chunk = ProjectNames.slice(i, i + chunkSize);
+
+    finalArray.push(chunk);
+  }
 
   return (
-    <div className="flex h-full flex items-center justify-center">
-      <div className="w-5/6 h-full relative md:p-8 p-4 pt-8">
-        <div className="w-full h-full pt-8 text-MikYellow">
-          <motion.div
-            initial={{ opacity: 0, skewX: "20deg", marginLeft: "50px" }}
-            whileInView={{ opacity: 1, marginLeft: "0px", skewX: "0deg" }}
-            className="text-MikYellow font-PlayI lg:text-7xl xl:text-7xl z-50 xl:text-MikYellow border-gray-700 md:text-5xl text-3xl border-b-4"
-          >
+    <div className="flex flex h-screen justify-center ">
+      <div className="w-full relative md:p-8 p-4 pt-8">
+        <div className="w-full pt-8 flex justify-around relative ">
+          <motion.div className="text-black font-Ezcar sticky top-10 self-start  2xl:text-5xl lg:text-5xl xl:text-5xl z-50  md:text-5xl text-xl">
             PROJECTS
+            <div className="blurry-gradientII -top-4"></div>
           </motion.div>
-
-          <div className="sm:mt-8 mt-2">
-            {ProjectNames.map((item) => {
+          <div className="">
+            {finalArray.map((item, index) => {
               return (
-                <motion.div
-                  className="font-Ezcar w-fit lg:text-7xl md:text-5xl group flex text-2xl text-black md:text-gray-700 md:mb-2 duration-300"
-                  key={item.name}
-                  initial={{ opacity: 0, skewX: "20deg", marginLeft: "50px" }}
-                  whileInView={{ opacity: 1, marginLeft: "0px", skewX: "0deg" }}
-                  transition={{ duration: 0.6 }}
-                  viewport={{ once: false }}
+                <div
+                  className={`  flex-col flex lg:flex-row  lg:p-0 p-2 pt-0`}
+                  key={index}
                 >
-                  <Link key={item.name} scroll={false} href={item.href}>
-                    <button className="flex group-hover:text-blue-800 duration-300">
-                      {item.name}{" "}
-                      <div className="group-hover:scale-150 duration-300 ml-2 sm:block hidden">
-                        {NavIcon}
-                      </div>
-                    </button>
-                  </Link>
-                </motion.div>
+                  {item.map((project, index) => {
+                    return (
+                      <Link
+                        key={project.name}
+                        href={project.href}
+                        className="flex "
+                      >
+                        <motion.div
+                          style={{
+                            display: "inline-block",
+                            overflow: "hidden",
+                          }}
+                          className="p-2 cursor-pointer"
+                        >
+                          <motion.img
+                            initial={{ opacity: 1, x: "100%" }}
+                            whileInView={{ opacity: 1, x: 0 }}
+                            viewport={{ once: false }}
+                            transition={{ duration: 0.87 }}
+                            src={project.img.src}
+                            width={350}
+                            height={350}
+                            alt={project.name}
+                            className="object-cover 2xl:h-[250px] xl:h-[250px] xl:w-[400px] 2xl:w-[400px] grit rounded-2xl "
+                          ></motion.img>
+
+                          <div className="lg:text-xs text-xs font-JosefinNormal font-bold uppercase">
+                            {project.name}
+                          </div>
+                        </motion.div>
+                      </Link>
+                    );
+                  })}
+                </div>
               );
             })}
           </div>

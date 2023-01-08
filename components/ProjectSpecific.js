@@ -59,8 +59,8 @@ export default function ProjectSpecific({
             key={icon.icon}
           >
             {icon.icon(
-              "30",
-              "30",
+              "24",
+              "24",
               "fill-indigo-700 hover:fill-gray-600 duration-300"
             )}
           </motion.a>
@@ -78,8 +78,8 @@ export default function ProjectSpecific({
             key={icon.icon}
           >
             {icon.icon(
-              "30",
-              "30",
+              "24",
+              "24",
               "fill-indigo-700 hover:fill-gray-600 duration-300"
             )}
           </motion.button>
@@ -98,13 +98,13 @@ export default function ProjectSpecific({
           >
             {!galleryOpen
               ? icon.icon(
-                  "30",
-                  "30",
+                  "24",
+                  "24",
                   "fill-indigo-700 hover:fill-gray-600 duration-300"
                 )
               : bookIcon(
-                  "30",
-                  "30",
+                  "24",
+                  "24",
                   "fill-indigo-700 hover:fill-gray-600 duration-300"
                 )}
           </motion.button>
@@ -129,20 +129,27 @@ export default function ProjectSpecific({
   };
 
   const [galleryOpen, setGalleryOpen] = useState(false);
+
+  const read = [
+    { name: "Stack", data: Stack },
+    { name: "Overview", data: OverView },
+    { name: "Scope", data: Scope },
+  ];
   return (
-    <div className={`w-5/6 md:p-8 h-full pt-2`}>
-      <div className="pt-8 ">
-        <div className="font-PlayI lg:text-7xl border-gray-700 md:text-3xl border-b relative text-right text-3xl text-indigo-700">
+    <div className={`w-full md:p-4 pt-8 h-full  relative`}>
+      <div className=" border absolute right-2 md:hidden top-40 rounded-full p-1 backdrop-blur-sm">
+        <motion.div className="flex flex-col space-y-6 z-50 text-right  right-2 sticky top-40 ">
+          {iconsWithLinks(true)}
+        </motion.div>
+      </div>
+      <div className="pt-10 ">
+        <div className="font-Ezcar lg:text-6xl  md:text-3xl relative text-left p-4 lg:p-0 lg:pt-4 lg:text-right text-xl ml-8 text-indigo-700">
           {Name}
         </div>
-        <div className="relative pb-4 mb-4 md:hidden">
-          <motion.div className="flex space-x-6 text-right absolute right-0">
-            {iconsWithLinks(true)}
-          </motion.div>
-        </div>
-        <div className="md:hidden font-PlayI">
-          <div className="ml-2 font-bold">Stack</div>
-          <div className="text-sm flex font-PlayI space-x-2 md:hidden w-full flex-wrap">
+
+        <div className="hidden font-Ezcar ">
+          <div className="ml-2 ">Stack</div>
+          <div className="text-sm flex font-Abril space-x-2 md:hidden w-full flex-wrap">
             {Stack.map((tech, index) => {
               return (
                 <div className="ml-2" key={index}>
@@ -153,8 +160,8 @@ export default function ProjectSpecific({
             })}
           </div>
         </div>
-        <motion.div className="">
-          <div className="hidden flex-col left-8 absolute mt-4 md:flex">
+        <motion.div className="w-full flex justify-center">
+          <div className="hidden flex-col left-8 absolute mt-4 md:flex z-50 top-40">
             {iconsWithLinks()}
           </div>
           <AnimatePresence>
@@ -164,7 +171,7 @@ export default function ProjectSpecific({
               initial="out"
               exit={"out"}
               key={galleryOpen}
-              className="flex absolute w-5/6  md:overflow-hidden md:h-fit"
+              className="flex absolute w-4/5  item-center  md:overflow-hidden md:h-fit"
             >
               {galleryOpen ? (
                 <div className="w-full">
@@ -174,42 +181,33 @@ export default function ProjectSpecific({
                   ></GalleryComponentAlt>
                 </div>
               ) : (
-                <motion.div className="flex flex-col md:flex-row mt-4 text-SmoBlack md:text-base text-sm">
-                  <section className="font-Ezcar md:w-2/4 p-3 md:h-fit border border-gray-300 bg-white rounded">
-                    <div className="md:text-4xl text-2xl mb-2 font-Ezcar border-b border-gray-500">
-                      OverView
-                    </div>
-                    <div className="h-[120px] overflow-auto md:h-fit">
-                      {OverView}
-                    </div>
-                  </section>
-
-                  <div className="flex flex-col font-Ezcar md:w-2/4 md:p-2 pt-0 md:ml-8 text-SmoBlack">
-                    <section className="font-Ezcar border p-3 border-gray-300 bg-white md:block hidden rounded">
-                      <div className="text-4xl mb-2 font-Ezcar border-b border-gray-500">
-                        Stack
-                      </div>
-                      <div className="flex flex-wrap">
-                        {Stack.map((tech, index) => {
-                          return (
-                            <div className="ml-2" key={index}>
-                              {tech}
-                              {index + 1 === Stack.length ? "." : ","}
+                <motion.div className="flex flex-col w-full lg:p-8">
+                  {read.map((item) => {
+                    return (
+                      <div
+                        key={item.name}
+                        className=" lg:w-4/5 w-11/12 p-4 lg:p-8 font-Abril border mb-4 rounded-2xl"
+                      >
+                        <div className="font-bold">{item.name}</div>
+                        <div className="w-full lg:text-sm text-xs">
+                          {item.name != "Stack" ? (
+                            item.data
+                          ) : (
+                            <div className="flex flex-col lg:flex-row  w-full">
+                              {item.data.map((pir, index) => {
+                                return (
+                                  <div key={pir}>
+                                    {pir}{" "}
+                                    {index + 1 === Stack.length ? "." : ","}{" "}
+                                  </div>
+                                );
+                              })}
                             </div>
-                          );
-                        })}
+                          )}
+                        </div>
                       </div>
-                    </section>
-
-                    <section className="font-Ezcar   mt-4 border border-gray-300 p-3 bg-white rounded">
-                      <div className="md:text-4xl text-2xl mb-2 font-Ezcar text-black border-b border-gray-500">
-                        Scope
-                      </div>
-                      <div className="h-[120px] overflow-auto md:h-fit">
-                        {Scope}
-                      </div>
-                    </section>
-                  </div>
+                    );
+                  })}
                 </motion.div>
               )}
             </motion.div>

@@ -1,6 +1,10 @@
 import react, { useEffect, useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/dist/client/router";
+import StackIcon from "../public/Icons/stackIcon";
+import MailIcon from "../public/Icons/mailIcon";
+import LinkIcon from "../public/Icons/linkIcon";
+import GitIcon from "../public/Icons/githubIcon";
 
 export default function Header() {
   const router = useRouter();
@@ -94,46 +98,49 @@ export default function Header() {
     ProjectPage === "E-com" ||
     ProjectPage === "Crud";
 
+  const LinksIcons = [
+    {
+      icon: MailIcon,
+      link: "mailto:owoadederin6@gmail.com?subject=Contact Me",
+    },
+    {
+      icon: LinkIcon,
+      link: "https://www.linkedin.com/in/derin-owoade-089685172/",
+    },
+    { icon: StackIcon, link: "/Stack/Tools", location: true },
+    { icon: GitIcon, link: "https://github.com/derin-art" },
+  ];
+
   return (
     <div className="w-full flex fixed z-50 top-0 items-center justify-center">
-      <div className="w-screen p-2 flex relative">
-        {" "}
-        <div
-          className={`${
-            alt
-              ? pageLocation === "home"
-                ? "font-Ezcar  text-white"
-                : "font-Nabla"
-              : "font-Nabla"
-          } md:text-3xl p-4 pt-2 rounded-full px-6 duration-300  ${
-            pageLocation === "home" && "border-gray-300"
-          } ${pageLocation === "projects" && "border-red-800"} ${
-            pageLocation === "Stack" && "border-gray-400"
-          }`}
-        >
-          D
-        </div>
-        <div className="absolute right-2 flex text-sm sm:hidden top-4">
-          {mobileLinks.map((item) => {
-            return (
-              <a
-                key={item.Name}
-                target={`${item.Name !== "Projects" ? "_blank" : ""}`}
-                href={item.Link}
-                className={`mr-2 font-Ezcar font-bold ${
-                  router.pathname === "/" && alt
-                    ? pageLocationMobile === "home"
-                      ? "text-white"
-                      : "text-black"
-                    : "text-black"
-                } `}
-              >
-                {item.Name}
-              </a>
-            );
+      <div className="w-11/12 lg:w-full mt-4 lg:mt-0 lg:rounded-none rounded-full  flex relative  h-10 justify-center">
+        <div className="flex lg:right-4 border lg:top-4 lg:space-x-12 w-full lg:w-fit lg:justify-end justify-around absolute backdrop-blur-sm rounded-full p-2">
+          {LinksIcons.map((item, index) => {
+            if (item.location) {
+              return (
+                <Link key={index} href={item.link}>
+                  {item.icon("24", "24", "fill-black cursor-pointer ")}
+                </Link>
+              );
+            } else {
+              return (
+                <a
+                  href={item.link}
+                  key={index}
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  {item.icon("24", "24", "fill-black  ")}
+                </a>
+              );
+            }
           })}
         </div>
-        <div
+      </div>
+    </div>
+  );
+}
+/*   <div
           className={`absolute right-0 flex hidden duration-300 sm:block ${
             router.pathname === "/" && alt
               ? pageLocation === "home"
@@ -174,8 +181,4 @@ export default function Header() {
               {sideDec()}
             </div>
           </div>
-        </div>
-      </div>
-    </div>
-  );
-}
+        </div> */

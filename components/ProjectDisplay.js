@@ -42,7 +42,10 @@ export default function ProjectDisplay({ page, setPage }) {
           eventually end on, “an app to connect and coordinate teams equipped
           with agile and scrum technologies”. I decided on key features like the
           existence of team data that could be edited and basic agile features
-          like a backlog, a story map, and a sprint planner.
+          like a backlog, a story map, and a sprint planner. I thought about the
+          process of managing multiple user story and thought a drag and drop
+          system would add to the user experience, so this technology was
+          implemented across most of the app.
         </p>
       ),
       Execution: (
@@ -61,7 +64,13 @@ export default function ProjectDisplay({ page, setPage }) {
           </ol>
         </div>
       ),
-      Stack: ["NextJs", "TailWind", "MongoDB", "FireBase"],
+      Stack: [
+        "NextJs",
+        "TailWind",
+        "MongoDB",
+        "FireBase",
+        "React Drag and Drop",
+      ],
       Images: [agile1, agile2, agile3, agile4, agile5],
     },
     {
