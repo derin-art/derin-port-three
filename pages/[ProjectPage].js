@@ -248,7 +248,7 @@ export default function ProjectPage() {
       animate={{ opacity: 1, translateY: "0%" }}
       transition={{ duration: 0.8 }}
       exit={{ opacity: 0, translateY: "-50%" }}
-      className="h-fit w-full flex items-center justify-center bg-white"
+      className="h-fit w-full flex items-center justify-center "
     >
       {projectData.map((Project) => {
         if (Project.query === ProjectPage) {
