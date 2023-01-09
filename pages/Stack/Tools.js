@@ -10,7 +10,9 @@ export default function Tools() {
       className="bg-white w-full flex  items-center justify-center "
     >
       <div className="w-4/5 bg-white text-lg lg:text-4xl p-4 flex lg:flex-row flex-col  justify-between font-Ezcar pt-20">
-        <div>STACK</div>
+        <div className="mb-2 border-b border-black lg:border-none lg:mb-0 font-PlayI">
+          STACK
+        </div>
         <div className="  flex flex-col text-black">
           {[
             "REACT",

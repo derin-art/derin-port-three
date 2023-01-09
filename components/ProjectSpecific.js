@@ -143,7 +143,7 @@ export default function ProjectSpecific({
         </motion.div>
       </div>
       <div className="pt-10 bg-white ">
-        <div className="font-Ezcar lg:text-6xl  md:text-3xl relative text-left p-4 lg:p-0 lg:pt-4 lg:text-right text-xl ml-8 text-indigo-700">
+        <div className="font-PlayI lg:text-6xl  md:text-3xl relative text-left p-4 lg:p-0 lg:pt-4 lg:text-right text-xl ml-8 text-indigo-700">
           {Name}
         </div>
 
