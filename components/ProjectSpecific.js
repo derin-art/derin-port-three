@@ -136,30 +136,17 @@ export default function ProjectSpecific({
     { name: "Scope", data: Scope },
   ];
   return (
-    <div className={`w-full md:p-4 pt-8 h-screen  relative bg-white`}>
-      <div className=" border absolute right-2 md:hidden top-40 rounded-full p-1 backdrop-blur-sm ">
+    <div className={`w-full md:p-4 pt-8 h-screen  relative bg-white `}>
+      <div className=" border absolute right-2 md:hidden top-40 rounded-full p-1 backdrop-blur-sm z-30">
         <motion.div className="flex flex-col space-y-6 z-50 text-right  right-2 sticky top-40 ">
           {iconsWithLinks(true)}
         </motion.div>
       </div>
-      <div className="pt-10 ">
+      <div className="pt-10 bg-white ">
         <div className="font-Ezcar lg:text-6xl  md:text-3xl relative text-left p-4 lg:p-0 lg:pt-4 lg:text-right text-xl ml-8 text-indigo-700">
           {Name}
         </div>
 
-        <div className="hidden font-Ezcar ">
-          <div className="ml-2 ">Stack</div>
-          <div className="text-sm flex font-Abril space-x-2 md:hidden w-full flex-wrap">
-            {Stack.map((tech, index) => {
-              return (
-                <div className="ml-2" key={index}>
-                  {tech}
-                  {index + 1 === Stack.length ? "." : ","}
-                </div>
-              );
-            })}
-          </div>
-        </div>
         <motion.div className="w-full flex justify-center bg-white">
           <div className="hidden flex-col left-8 absolute mt-4 md:flex z-50 top-40">
             {iconsWithLinks()}
@@ -171,17 +158,17 @@ export default function ProjectSpecific({
               initial="out"
               exit={"out"}
               key={galleryOpen}
-              className="flex absolute w-4/5  item-center  md:overflow-hidden md:h-fit bg-white"
+              className="flex absolute w-full  item-center  md:overflow-hidden md:h-fit bg-white z-10"
             >
               {galleryOpen ? (
-                <div className="w-full">
+                <div className="lg:w-full w-4/5 lg:ml-0 ml-6">
                   <GalleryComponentAlt
                     imgArray={Images}
                     key="Gallery"
                   ></GalleryComponentAlt>
                 </div>
               ) : (
-                <motion.div className="flex flex-col w-full lg:p-8 ">
+                <motion.div className="flex flex-col w-4/5 lg:p-8 ml-6 lg:ml-14">
                   {read.map((item) => {
                     return (
                       <div
