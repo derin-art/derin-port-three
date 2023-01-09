@@ -39,7 +39,8 @@ export default function NewHome() {
             transition={{ duration: 0.7 }}
           >
             {" "}
-            Hi, i&apos;m Derin and i&apos;m a fullstack engineer
+            Hi, i&apos;m Derin and i&apos;m a{" "}
+            <span className="font-PlayI">fullStack</span> engineer
           </motion.div>
         </motion.div>
         <div className="blurry-gradient"></div>

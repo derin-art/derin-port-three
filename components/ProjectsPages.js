@@ -39,12 +39,12 @@ export default function ProjectsPages() {
     <div className="flex flex h-screen justify-center ">
       <div className="w-full relative md:p-8 p-4 pt-8">
         <div className="w-full pt-8 flex justify-around relative ">
-          <motion.div className="text-black hidden font-Ezcar lg:block sticky top-10 self-start  2xl:text-5xl lg:text-5xl xl:text-5xl z-50  md:text-5xl text-xl">
+          <motion.div className="text-black hidden font-PlayI lg:block sticky top-10 self-start  2xl:text-5xl lg:text-5xl xl:text-5xl z-50  md:text-5xl text-xl">
             PROJECTS
             <div className="blurry-gradientII -top-4"></div>
           </motion.div>
           <div className="">
-            <motion.div className="text-black font-Ezcar lg:hidden flex items-center justify-center top-10 self-start  2xl:text-5xl lg:text-5xl xl:text-5xl z-50  md:text-5xl text-xl">
+            <motion.div className="text-black font-PlayI lg:hidden flex items-center justify-center top-10 self-start  2xl:text-5xl lg:text-5xl xl:text-5xl z-50  md:text-5xl text-2xl">
               PROJECTS
               <div className="blurry-gradientII -top-4"></div>
             </motion.div>
