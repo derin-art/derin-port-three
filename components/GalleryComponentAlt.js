@@ -57,34 +57,39 @@ export default function GalleryComponentAlt({ imgArray }) {
   return (
     <div>
       <div className="font-Abril font-bold mb-6 mt-4 sm:mb-0 sm:mt-0">
-        <div className="ml-2 ">
+        <div className="ml-2 lg:hidden">
           {imgNo + 1} of {imgArray.length}
         </div>
-        <div className="flex w-11/12 mt-1 mb-1 relative md:ml-0 ml-2 ">
-          <button
-            className={`font-Abril bg-slate-800 md:hidden block text-white p-2 rounded md:text-base text-xs ${
-              imgNo === 0 ? "bg-red-500 cursor-not-allowed" : ""
-            }`}
-            onClick={() => {
-              if (imgNo === 0) return;
-              setImgNo((prev) => prev - 1);
-            }}
-          >
-            Prev
-          </button>
-          <button
-            className={`font-Abril  absolute right-0 md:hidden block bg-slate-800 text-white p-2 md:text-base text-xs rounded ${
-              imgNo === imgArray.length - 1
-                ? "bg-red-500 cursor-not-allowed"
-                : ""
-            }`}
-            onClick={() => {
-              if (imgNo === imgArray.length - 1) return;
-              setImgNo((prev) => prev + 1);
-            }}
-          >
-            Next
-          </button>
+        <div className="flex w-full flex justify-center items-center  mt-1 mb-1 relative md:ml-0 ">
+          <div className="flex w-11/12 lg:w-4/5 justify-between">
+            <div className="ml-2 absolute  lg:block hidden">
+              {imgNo + 1} of {imgArray.length}
+            </div>
+            <button
+              className={`font-Abril bg-slate-800 md:hidden block text-white p-2 rounded md:text-base text-xs ${
+                imgNo === 0 ? "bg-red-500 cursor-not-allowed" : ""
+              }`}
+              onClick={() => {
+                if (imgNo === 0) return;
+                setImgNo((prev) => prev - 1);
+              }}
+            >
+              Prev
+            </button>
+            <button
+              className={`font-Abril   md:hidden block bg-slate-800 text-white p-2 md:text-base text-xs rounded ${
+                imgNo === imgArray.length - 1
+                  ? "bg-red-500 cursor-not-allowed"
+                  : ""
+              }`}
+              onClick={() => {
+                if (imgNo === imgArray.length - 1) return;
+                setImgNo((prev) => prev + 1);
+              }}
+            >
+              Next
+            </button>
+          </div>
         </div>
       </div>
 
