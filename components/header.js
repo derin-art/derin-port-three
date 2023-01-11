@@ -29,9 +29,6 @@ export default function Header() {
     <div className="w-full flex fixed z-40 top-0 items-center justify-center">
       <div className="w-11/12  mt-4 lg:mt-0 lg:rounded-none rounded-full  flex relative  h-10 justify-center">
         <div className="flex l:right-4 border border-gray-400 overflow-hidden lg:top-4 w-full lg:w-3/5  lg:justify-around justify-around absolute backdrop-blur-sm rounded-full p-[11px]">
-          <span className="blurry-gradientIII right-0 z-0"></span>
-          <span className="blurry-gradientII right-40 z-0"></span>
-
           {LinksIcons.map((item, index) => {
             if (item.location) {
               return (

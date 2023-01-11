@@ -136,7 +136,7 @@ export default function ProjectSpecific({
     { name: "Scope", data: Scope },
   ];
   return (
-    <div className={`w-full md:p-4 pt-8 h-screen  relative bg-white `}>
+    <div className={`w-full md:p-4 pt-8 h-screen  relative  `}>
       <div className=" border absolute right-2 md:hidden border-gray-400 top-40 rounded-full p-1 backdrop-blur-sm z-30">
         <motion.div className="flex flex-col space-y-6 z-50 text-right  right-2 sticky top-40 ">
           {iconsWithLinks(true)}
@@ -158,7 +158,7 @@ export default function ProjectSpecific({
               initial="out"
               exit={"out"}
               key={galleryOpen}
-              className="flex absolute w-full  item-center  md:overflow-hidden md:h-fit bg-white z-10"
+              className="flex absolute w-full  item-center lg:justify-center  md:overflow-hidden md:h-fit bg-white z-10"
             >
               {galleryOpen ? (
                 <div className="lg:w-full w-4/5 lg:ml-0 ml-6">
@@ -168,12 +168,13 @@ export default function ProjectSpecific({
                   ></GalleryComponentAlt>
                 </div>
               ) : (
-                <motion.div className="flex flex-col w-4/5 lg:p-8 ml-6 lg:items-center lg:justify-center lg:w-full">
+                <motion.div className="flex flex-col w-4/5 lg:p-8 ml-6  lg:items-center lg:justify-center lg:w-full">
+                  <span className="blurry-gradientIV top-40 z-0"></span>{" "}
                   {read.map((item) => {
                     return (
                       <div
                         key={item.name}
-                        className=" lg:w-4/5 w-11/12 p-4 lg:p-8 font-Abril border border-gray-400 mb-4 rounded-2xl text-black"
+                        className=" lg:w-4/5 w-11/12 p-4 lg:p-8 font-Abril border  z-30 backdrop-blur-lg glass border-gray-400 mb-4 rounded-2xl text-black"
                       >
                         <div className="font-bold">{item.name}</div>
                         <div className="w-full lg:text-sm text-xs text-gray-600">
