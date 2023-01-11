@@ -77,8 +77,8 @@ export default function Header() {
 
   return (
     <div className="w-full flex fixed z-50 top-0 items-center justify-center">
-      <div className="w-11/12 lg:w-full mt-4 lg:mt-0 lg:rounded-none rounded-full  flex relative  h-10 justify-center">
-        <div className="flex lg:right-4 border border-gray-300 lg:top-4 lg:space-x-12 w-full lg:w-fit lg:justify-end justify-around absolute backdrop-blur-sm rounded-full p-2">
+      <div className="w-11/12  mt-4 lg:mt-0 lg:rounded-none rounded-full  flex relative  h-10 justify-center">
+        <div className="flex l:right-4 border border-gray-300 lg:top-4 w-full lg:w-3/5  lg:justify-around justify-around absolute backdrop-blur-sm rounded-full p-2">
           {LinksIcons.map((item, index) => {
             if (item.location) {
               return (
