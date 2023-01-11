@@ -66,10 +66,10 @@ export default function ProjectsPages() {
                             display: "inline-block",
                             overflow: "hidden",
                           }}
-                          className="p-2 cursor-pointer"
+                          className="p-2"
                         >
                           <motion.img
-                            initial={{ opacity: 1, x: "100%" }}
+                            initial={{ opacity: 1, x: "50%" }}
                             whileInView={{ opacity: 1, x: 0 }}
                             viewport={{ once: false }}
                             transition={{ duration: 0.87 }}

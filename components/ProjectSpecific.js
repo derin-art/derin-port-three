@@ -61,7 +61,7 @@ export default function ProjectSpecific({
             {icon.icon(
               "24",
               "24",
-              "fill-indigo-700 hover:fill-gray-600 duration-300"
+              "fill-gray-600 hover:fill-gray-800 duration-300"
             )}
           </motion.a>
         );
@@ -80,7 +80,7 @@ export default function ProjectSpecific({
             {icon.icon(
               "24",
               "24",
-              "fill-indigo-700 hover:fill-gray-600 duration-300"
+              "fill-gray-600 hover:fill-gray-800 duration-300"
             )}
           </motion.button>
         );
@@ -100,12 +100,12 @@ export default function ProjectSpecific({
               ? icon.icon(
                   "24",
                   "24",
-                  "fill-indigo-700 hover:fill-gray-600 duration-300"
+                  "fill-gray-600 hover:fill-gray-800 duration-300"
                 )
               : bookIcon(
                   "24",
                   "24",
-                  "fill-indigo-700 hover:fill-gray-600 duration-300"
+                  "fill-gray-600 hover:fill-gray-800 duration-300"
                 )}
           </motion.button>
         );
@@ -137,13 +137,13 @@ export default function ProjectSpecific({
   ];
   return (
     <div className={`w-full md:p-4 pt-8 h-screen  relative bg-white `}>
-      <div className=" border absolute right-2 md:hidden top-40 rounded-full p-1 backdrop-blur-sm z-30">
+      <div className=" border absolute right-2 md:hidden border-gray-400 top-40 rounded-full p-1 backdrop-blur-sm z-30">
         <motion.div className="flex flex-col space-y-6 z-50 text-right  right-2 sticky top-40 ">
           {iconsWithLinks(true)}
         </motion.div>
       </div>
-      <div className="pt-10 bg-white ">
-        <div className="font-PlayI lg:text-6xl  md:text-3xl relative text-left p-4 lg:p-0 lg:pt-4 lg:text-right text-xl ml-8 text-indigo-700">
+      <div className="pt-10 bg-white">
+        <div className="font-PlayI lg:text-6xl  md:text-3xl relative text-left p-4 lg:p-0 lg:pt-4 lg:text-center text-2xl ml-8 text-gray-900">
           {Name}
         </div>
 
@@ -168,15 +168,15 @@ export default function ProjectSpecific({
                   ></GalleryComponentAlt>
                 </div>
               ) : (
-                <motion.div className="flex flex-col w-4/5 lg:p-8 ml-6 lg:ml-14">
+                <motion.div className="flex flex-col w-4/5 lg:p-8 ml-6 lg:items-center lg:justify-center lg:w-full">
                   {read.map((item) => {
                     return (
                       <div
                         key={item.name}
-                        className=" lg:w-4/5 w-11/12 p-4 lg:p-8 font-Abril border mb-4 rounded-2xl text-black"
+                        className=" lg:w-4/5 w-11/12 p-4 lg:p-8 font-Abril border border-gray-400 mb-4 rounded-2xl text-black"
                       >
                         <div className="font-bold">{item.name}</div>
-                        <div className="w-full lg:text-sm text-xs">
+                        <div className="w-full lg:text-sm text-xs text-gray-600">
                           {item.name != "Stack" ? (
                             item.data
                           ) : (
