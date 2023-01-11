@@ -40,7 +40,7 @@ function MyApp({ Component, pageProps }) {
               "select",
               "textarea",
               "button",
-              ".link",
+              "Link",
               "img",
             ]}
           />

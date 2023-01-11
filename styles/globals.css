@@ -147,3 +147,17 @@ a {
 
   opacity: 0.2;
 }
+
+.blurry-gradientIII {
+  width: 200px;
+  height: 200px;
+  position: absolute;
+  border-radius: 50% 22% 40% 80%;
+  filter: blur(40px);
+  background: radial-gradient(
+    circle at 50% 50%,
+    rgb(255, 0, 64),
+    rgba(85, 43, 183, 0)
+  );
+  opacity: 0.2;
+}
