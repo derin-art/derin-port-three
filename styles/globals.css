@@ -57,6 +57,16 @@ a {
   src: url("../public/PT_Serif/PTSerif-Italic.ttf");
 }
 
+@font-face {
+  font-family: inter;
+  src: url("../public/Inter/Inter-VariableFont_slnt\,wght.ttf");
+}
+
+@font-face {
+  font-family: Unbounded;
+  src: url("../public/Unbounded/Unbounded-VariableFont_wght.ttf");
+}
+
 @-moz-document url-prefix() {
   .scrollbar {
     overflow: auto;
@@ -181,4 +191,8 @@ a {
   background: rgba(255, 255, 255, 0.2);
   -webkit-backdrop-filter: blur(9px);
   backdrop-filter: blur(9px);
+}
+
+.behindImage {
+  mix-blend-mode: difference;
 }

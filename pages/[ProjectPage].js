@@ -28,7 +28,7 @@ export default function ProjectPage() {
 
   const projectData = [
     {
-      Name: "AGILE/SCRUM APP",
+      Name: "AGILE /SCRUM APP",
       query: "Agile",
       OverView: (
         <p>

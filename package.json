@@ -9,6 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@types/react-swipeable-views": "^0.13.1",
     "framer-motion": "^7.5.3",
     "next": "12.3.1",
     "react": "18.2.0",
@@ -16,6 +17,7 @@
     "react-animation-on-scroll": "^5.1.0",
     "react-dom": "18.2.0",
     "react-scroll-motion": "^0.3.0",
+    "react-swipeable-views": "^0.14.0",
     "use-animate-presence": "^0.5.2"
   },
   "devDependencies": {

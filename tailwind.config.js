@@ -13,6 +13,8 @@ module.exports = {
         Krona: ["Krona", "serif"],
         CorUp: ["CorUp", "serif"],
         PlayI: ["PlayI", "serif"],
+        inter: ["inter", "serif"],
+        Unbounded: ["Unbounded", "serif"],
       },
       colors: {
         MikYellow: "#FEC601",
@@ -24,6 +26,8 @@ module.exports = {
         ChiViolet: "#856084",
         PinkLav: "#D4ADCF",
         TiWhite: "#fafafa",
+        ultraGray: "#242424",
+        ultraBlack: "#1a1a1a",
       },
     },
   },
