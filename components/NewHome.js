@@ -19,7 +19,7 @@ export default function NewHome() {
 
   return (
     <div>
-      <div className="flex flex-col w-full h-full text-black text-center items-center justify-center xl:justify-end xl:text-left xl:mt-12">
+      <div className="flex flex-col w-full h-full text-black text-center items-center justify-center xl:justify-end xl:text-left xl:mt-4 xl:p-4">
         <div className="xl:hidden">
           <Image
             src={headShot.src}
@@ -39,7 +39,7 @@ export default function NewHome() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: false }}
             transition={{ duration: 0.7 }}
-            className="font-inter text-2xl p-2 text-ultraBlack md:text-3xl lg:text-4xl xl:text-8xl xl:w-full xl:left-0 2xl:text-9xl xl:sticky xl:text-left"
+            className="font-inter text-2xl p-2 text-ultraGray md:text-3xl lg:text-4xl xl:text-8xl xl:w-full xl:p-2 xl:left-0 2xl:text-9xl  xl:text-left"
           >
             {" "}
             Hi, i&apos;m{" "}

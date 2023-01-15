@@ -22,7 +22,7 @@ export default function Home() {
             <NewHome></NewHome>
           </div>
           <div
-            className={` hidden xl:block   bg-white `}
+            className={` hidden xl:block   bg-white sticky top-0`}
             style={{ height: "50vh" }}
             id="home"
           >

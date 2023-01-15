@@ -93,7 +93,7 @@ export default function ProjectPage() {
       },
     },
     {
-      Name: "E-COMMERCE APP",
+      Name: "ECOM APP",
       query: "E-com",
       OverView: (
         <p>
@@ -146,7 +146,7 @@ export default function ProjectPage() {
       },
     },
     {
-      Name: "E-COM CRUD",
+      Name: "ECOM CRUD",
       query: "Crud",
       OverView: <p> A Crud app that serves the ecom.</p>,
       Scope: (

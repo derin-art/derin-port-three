@@ -144,16 +144,25 @@ export default function ProjectSpecific({
   ];
   return (
     <div
-      className={`w-full lg:flex-row pt-20 h-screen  relative flex flex-col font-inter p-4`}
+      className={`w-full lg:flex-row pt-20 h-screen  relative flex flex-col font-inter p-4 `}
     >
+      {" "}
+      {
+        <div
+          className={`absolute ${
+            !galleryOpen ? "lg:hidden" : "lg:flex"
+          }  items-center justify-center hidden h-screen top-0 backdrop-blur-sm`}
+        >
+          <div className="w-2/5">
+            <BetterGallery imageArray={Images} key="Keeysdd"></BetterGallery>
+          </div>
+        </div>
+      }
       <div className="text-5xl lg:text-6xl xl:text-8xl 2xl:text-9xl lg:p-2 xl:p-4 text-ultraBlack ">
         <div className="blurry-gradientII "></div>
         {Name}
         <div className="lg:flex space-x-4 mt-4 hidden">
           {iconsWithLinks(true)}
-        </div>
-        <div className="  mt-14 ">
-          <BetterGallery imageArray={Images} key="Keeysdd"></BetterGallery>
         </div>
       </div>
       <div className="flex space-x-4 mt-4 lg:hidden">

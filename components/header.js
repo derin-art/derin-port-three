@@ -28,7 +28,7 @@ export default function Header() {
   return (
     <div className="w-full flex fixed z-40 top-0 items-center justify-center ">
       <div className="w-full  lg:mt-0 lg:rounded-none  flex relative   justify-center">
-        <div className="flex l:right-4 border-b  overflow-hidden bg-opacity-25 backdrop-blur-sm w-full  lg:justify-around justify-around absolute   p-[11px]">
+        <div className="flex l:right-4 border-b  overflow-hidden bg-opacity-25 backdrop-blur-sm w-full  xl:space-x-48 xl:justify-center justify-around absolute   p-[11px]">
           {LinksIcons.map((item, index) => {
             if (item.location) {
               return (
@@ -42,7 +42,7 @@ export default function Header() {
                       {item.icon(
                         "24",
                         "24",
-                        "fill-ultraBlack  z-50 p-[3px] xl:p-[2px]"
+                        "fill-stone-600   z-50 p-[3px] xl:p-[2px]"
                       )}
                       <p className="text-[10px] absolute font-inter top-0 text-gray-500 z-50">
                         Stack
@@ -53,7 +53,7 @@ export default function Header() {
                       {BackIcon(
                         "24",
                         "24",
-                        "fill-ultraBlack  z-50 p-[3px] xl:p-[2px]"
+                        "fill-stone-600  z-50 p-[3px] xl:p-[2px]"
                       )}
                     </button>
                   )}
@@ -71,7 +71,7 @@ export default function Header() {
                   {item.icon(
                     "24",
                     "24",
-                    "fill-ultraBlack  z-50 p-[3px] xl:p-[2px[2px]"
+                    "fill-stone-600  z-50 p-[3px] xl:p-[2px[2px]"
                   )}
                 </a>
               );
