@@ -9,8 +9,8 @@ export default function Tools() {
       exit={{ opacity: 0, translateY: "-30%" }}
       className="bg-white w-full flex  items-center justify-center "
     >
-      <div className="w-4/5 bg-white text-lg lg:text-4xl p-4 flex lg:flex-row flex-col  justify-between font-Ezcar pt-20">
-        <div className="mb-2 border-b border-black lg:border-none lg:mb-0 font-PlayI">
+      <div className="w-4/5 bg-white text-lg lg:text-4xl p-4 flex lg:flex-row flex-col  justify-between font-inter pt-20">
+        <div className="mb-2 border-b border-black lg:border-none lg:mb-0 font-inter">
           STACK
         </div>
         <div className="  flex flex-col text-black">

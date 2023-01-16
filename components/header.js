@@ -26,12 +26,9 @@ export default function Header() {
   ];
 
   return (
-    <div className="w-full flex fixed z-40 top-0 items-center justify-center">
-      <div className="w-11/12  mt-4 lg:mt-0 lg:rounded-none rounded-full  flex relative  h-10 justify-center">
-        <div className="flex l:right-4 border border-gray-400 overflow-hidden lg:top-4 w-full lg:w-3/5  lg:justify-around justify-around absolute backdrop-blur-sm rounded-full p-[11px]">
-          <span className="blurry-gradientIII right-0 z-0"></span>
-          <span className="blurry-gradientII right-40 z-0"></span>
-
+    <div className="w-full flex fixed z-40 top-0 items-center justify-center ">
+      <div className="w-full  lg:mt-0 lg:rounded-none  flex relative   justify-center">
+        <div className="flex l:right-4 border-b   overflow-hidden bg-opacity-25 backdrop-blur-sm w-full  xl:space-x-48 xl:justify-center justify-around absolute   p-[11px]">
           {LinksIcons.map((item, index) => {
             if (item.location) {
               return (
@@ -41,15 +38,23 @@ export default function Header() {
                   href={!isOnStack ? item.link : "/"}
                 >
                   {!isOnStack ? (
-                    <button className="z-50">
-                      {item.icon("24", "24", "fill-black  z-50")}
-                      <p className="text-xs absolute font-PlayI top-0 text-gray-500 z-50">
+                    <button className="z-50 rounded-lg">
+                      {item.icon(
+                        "24",
+                        "24",
+                        "fill-zinc-600   z-50 p-[3px] xl:p-[2px]"
+                      )}
+                      <p className="text-[10px] absolute font-inter top-0 text-gray-500 z-50">
                         Stack
                       </p>
                     </button>
                   ) : (
                     <button className="z-50">
-                      {BackIcon("24", "24", "fill-black  z-50")}
+                      {BackIcon(
+                        "24",
+                        "24",
+                        "fill-zinc-600  z-50 p-[3px] xl:p-[2px]"
+                      )}
                     </button>
                   )}
                 </Link>
@@ -60,10 +65,14 @@ export default function Header() {
                   href={item.link}
                   key={index}
                   target="_blank"
-                  className="z-50"
+                  className="z-50  rounded-lg"
                   rel="noreferrer"
                 >
-                  {item.icon("24", "24", "fill-black  z-50 ")}
+                  {item.icon(
+                    "24",
+                    "24",
+                    "fill-zinc-600  z-50 p-[3px] xl:p-[2px[2px]"
+                  )}
                 </a>
               );
             }

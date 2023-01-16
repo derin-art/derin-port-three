@@ -5,6 +5,7 @@ import GlobeIcon from "../public/Icons/globeIcon";
 import BackIcon from "../public/Icons/backIcon";
 import { motion } from "framer-motion";
 import { AnimatePresence } from "framer-motion";
+import BetterGallery from "./BetterGallery";
 import GalleryComponent from "../components/GalleryComponent";
 import GalleryComponentAlt from "./GalleryComponentAlt";
 
@@ -52,7 +53,9 @@ export default function ProjectSpecific({
           <motion.a
             href={icon.realLink}
             target="_blank"
-            className={`${!mobile && "left-8 mb-20"}  rounded-lg `}
+            className={`${
+              !mobile && "left-8 mb-20"
+            }  rounded-lg  bg-ultraGray p-1 border border-2`}
             initial={{ opacity: 0, translateX: "-100px" }}
             animate={{ opacity: 1, translateX: "0px" }}
             transition={{ delay: 0.7 }}
@@ -61,7 +64,7 @@ export default function ProjectSpecific({
             {icon.icon(
               "24",
               "24",
-              "fill-gray-600 hover:fill-gray-800 duration-300"
+              "fill-blue-300 hover:fill-gray-600 duration-300"
             )}
           </motion.a>
         );
@@ -71,7 +74,9 @@ export default function ProjectSpecific({
             onClick={() => {
               router.push("/");
             }}
-            className={`${!mobile && "left-8 mb-20"}  rounded-lg`}
+            className={`${
+              !mobile && "left-8 mb-20 "
+            }  rounded-lg bg-ultraGray p-1 border border-2`}
             initial={{ opacity: 0, translateX: "-100px" }}
             animate={{ opacity: 1, translateX: "0px" }}
             transition={{ delay: 0.7 }}
@@ -80,7 +85,7 @@ export default function ProjectSpecific({
             {icon.icon(
               "24",
               "24",
-              "fill-gray-600 hover:fill-gray-800 duration-300"
+              "fill-blue-300 hover:fill-gray-600 duration-300"
             )}
           </motion.button>
         );
@@ -90,7 +95,9 @@ export default function ProjectSpecific({
             onClick={() => {
               setGalleryOpen((prev) => !prev);
             }}
-            className={`${!mobile && "left-8 mb-20 "}   rounded-lg "`}
+            className={`${
+              !mobile && "left-8 mb-20"
+            }   rounded-lg  bg-ultraGray p-1 border border-2 hidden lg:block`}
             initial={{ opacity: 0, translateX: "-100px" }}
             animate={{ opacity: 1, translateX: "0px" }}
             transition={{ delay: 0.7 }}
@@ -100,12 +107,12 @@ export default function ProjectSpecific({
               ? icon.icon(
                   "24",
                   "24",
-                  "fill-gray-600 hover:fill-gray-800 duration-300"
+                  "fill-blue-300 hover:fill-gray-600 duration-300"
                 )
               : bookIcon(
                   "24",
                   "24",
-                  "fill-gray-600 hover:fill-gray-800 duration-300"
+                  "fill-blue-300 hover:fill-gray-600 duration-300"
                 )}
           </motion.button>
         );
@@ -131,75 +138,71 @@ export default function ProjectSpecific({
   const [galleryOpen, setGalleryOpen] = useState(false);
 
   const read = [
-    { name: "Stack", data: Stack },
+    { name: "Under the hood", data: Stack },
     { name: "Overview", data: OverView },
     { name: "Scope", data: Scope },
   ];
   return (
-    <div className={`w-full md:p-4 pt-8 h-screen  relative bg-white `}>
-      <div className=" border absolute right-2 md:hidden border-gray-400 top-40 rounded-full p-1 backdrop-blur-sm z-30">
-        <motion.div className="flex flex-col space-y-6 z-50 text-right  right-2 sticky top-40 ">
-          {iconsWithLinks(true)}
-        </motion.div>
-      </div>
-      <div className="pt-10 bg-white">
-        <div className="font-PlayI lg:text-6xl  md:text-3xl relative text-left p-4 lg:p-0 lg:pt-4 lg:text-center text-2xl ml-8 text-gray-900">
-          {Name}
-        </div>
-
-        <motion.div className="w-full flex justify-center bg-white">
-          <div className="hidden flex-col left-8 absolute mt-4 md:flex z-50 top-40">
-            {iconsWithLinks()}
+    <div
+      className={`w-full lg:flex-row pt-20 h-screen  relative flex flex-col font-inter p-4 `}
+    >
+      {" "}
+      {
+        <div
+          className={`absolute ${
+            !galleryOpen ? "lg:hidden" : "lg:flex"
+          }  items-center justify-center hidden h-screen top-0 backdrop-blur-sm`}
+        >
+          <div className="w-2/5">
+            <BetterGallery imageArray={Images} key="Keeysdd"></BetterGallery>
           </div>
-          <AnimatePresence>
-            <motion.div
-              variants={variants}
-              animate="in"
-              initial="out"
-              exit={"out"}
-              key={galleryOpen}
-              className="flex absolute w-full  item-center  md:overflow-hidden md:h-fit bg-white z-10"
-            >
-              {galleryOpen ? (
-                <div className="lg:w-full w-4/5 lg:ml-0 ml-6">
-                  <GalleryComponentAlt
-                    imgArray={Images}
-                    key="Gallery"
-                  ></GalleryComponentAlt>
-                </div>
-              ) : (
-                <motion.div className="flex flex-col w-4/5 lg:p-8 ml-6 lg:items-center lg:justify-center lg:w-full">
-                  {read.map((item) => {
-                    return (
-                      <div
-                        key={item.name}
-                        className=" lg:w-4/5 w-11/12 p-4 lg:p-8 font-Abril border border-gray-400 mb-4 rounded-2xl text-black"
-                      >
-                        <div className="font-bold">{item.name}</div>
-                        <div className="w-full lg:text-sm text-xs text-gray-600">
-                          {item.name != "Stack" ? (
-                            item.data
-                          ) : (
-                            <div className="flex flex-col lg:flex-row  w-full">
-                              {item.data.map((pir, index) => {
-                                return (
-                                  <div key={pir}>
-                                    {pir}{" "}
-                                    {index + 1 === Stack.length ? "." : ","}{" "}
-                                  </div>
-                                );
-                              })}
-                            </div>
-                          )}
+        </div>
+      }
+      <div className="text-5xl lg:text-6xl xl:text-8xl 2xl:text-9xl lg:p-2 xl:p-4 text-ultraBlack ">
+        <div className="blurry-gradientII "></div>
+        {Name}
+        <div className="lg:flex space-x-4 mt-4 hidden">
+          {iconsWithLinks(true)}
+        </div>
+      </div>
+      <div className="flex space-x-4 mt-4 lg:hidden ">
+        {iconsWithLinks(true)}{" "}
+        <motion.a
+          href="#down"
+          className={` rounded-lg  bg-ultraGray p-1 border border-2  inline `}
+          initial={{ opacity: 0, translateX: "-100px" }}
+          animate={{ opacity: 1, translateX: "0px" }}
+          transition={{ delay: 0.7 }}
+        >
+          {GalleryIcon(
+            "24",
+            "24",
+            "fill-blue-300 hover:fill-gray-600 duration-300"
+          )}
+        </motion.a>
+      </div>
+      <div className="mt-8 lg:mt-0 ">
+        {read.map((item, index) => {
+          return (
+            <div key={index} className="mb-4 border-y py-2 ">
+              <div className="text-4xl text-gray-700">{item.name}</div>
+              <div className="text-gray-500 text-xs">
+                {item.name === "Under the hood"
+                  ? item.data.map((pir, index) => {
+                      return (
+                        <div className="mr-2" key={index}>
+                          {pir}
                         </div>
-                      </div>
-                    );
-                  })}
-                </motion.div>
-              )}
-            </motion.div>
-          </AnimatePresence>
-        </motion.div>
+                      );
+                    })
+                  : item.data}
+              </div>
+            </div>
+          );
+        })}
+      </div>
+      <div id="down" className="lg:hidden ">
+        <BetterGallery imageArray={Images} key="Keeysd"></BetterGallery>
       </div>
     </div>
   );

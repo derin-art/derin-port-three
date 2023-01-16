@@ -19,15 +19,17 @@ export default function NewHome() {
 
   return (
     <div>
-      <div className="flex flex-col w-full text-black text-center  items-center  justify-center">
-        <Image
-          src={headShot.src}
-          alt="My passport picture"
-          height={100}
-          width={100}
-          className="rounded-full z-30  "
-          unoptimized={true}
-        ></Image>
+      <div className="flex flex-col w-full h-full text-black text-center items-center justify-center xl:justify-end xl:text-left xl:mt-4 xl:p-4">
+        <div className="xl:hidden">
+          <Image
+            src={headShot.src}
+            alt="My passport picture"
+            height={100}
+            width={100}
+            className="rounded-full z-30"
+            unoptimized={true}
+          ></Image>
+        </div>
         <motion.div
           style={{ display: "inline-block", overflow: "hidden" }}
           className="mt-5"
@@ -37,10 +39,21 @@ export default function NewHome() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: false }}
             transition={{ duration: 0.7 }}
+            className="font-inter text-2xl p-2 text-ultraGray md:text-3xl lg:text-4xl xl:text-8xl xl:w-full xl:p-2 xl:left-0 2xl:text-9xl  xl:text-left"
           >
             {" "}
-            Hi, i&apos;m Derin and i&apos;m a{" "}
-            <span className="font-PlayI">fullStack</span> engineer
+            Hi, i&apos;m{" "}
+            <span className="xl:inline hidden">
+              <Image
+                src={headShot.src}
+                alt="My passport picture"
+                height={100}
+                width={100}
+                className="rounded-full z-30"
+                unoptimized={true}
+              ></Image>
+            </span>{" "}
+            Derin and i&apos;m a <span className="">fullstack</span> engineer.
           </motion.div>
         </motion.div>
         <div className="blurry-gradient"></div>
