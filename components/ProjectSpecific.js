@@ -97,7 +97,7 @@ export default function ProjectSpecific({
             }}
             className={`${
               !mobile && "left-8 mb-20"
-            }   rounded-lg  bg-ultraGray p-1 border border-2`}
+            }   rounded-lg  bg-ultraGray p-1 border border-2 hidden lg:block`}
             initial={{ opacity: 0, translateX: "-100px" }}
             animate={{ opacity: 1, translateX: "0px" }}
             transition={{ delay: 0.7 }}
@@ -165,8 +165,21 @@ export default function ProjectSpecific({
           {iconsWithLinks(true)}
         </div>
       </div>
-      <div className="flex space-x-4 mt-4 lg:hidden">
-        {iconsWithLinks(true)}
+      <div className="flex space-x-4 mt-4 lg:hidden ">
+        {iconsWithLinks(true)}{" "}
+        <motion.a
+          href="#down"
+          className={` rounded-lg  bg-ultraGray p-1 border border-2  inline `}
+          initial={{ opacity: 0, translateX: "-100px" }}
+          animate={{ opacity: 1, translateX: "0px" }}
+          transition={{ delay: 0.7 }}
+        >
+          {GalleryIcon(
+            "24",
+            "24",
+            "fill-blue-300 hover:fill-gray-600 duration-300"
+          )}
+        </motion.a>
       </div>
       <div className="mt-8 lg:mt-0 ">
         {read.map((item, index) => {
@@ -188,7 +201,7 @@ export default function ProjectSpecific({
           );
         })}
       </div>
-      <div className="lg:hidden">
+      <div id="down" className="lg:hidden ">
         <BetterGallery imageArray={Images} key="Keeysd"></BetterGallery>
       </div>
     </div>
