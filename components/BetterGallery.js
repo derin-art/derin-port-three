@@ -4,7 +4,7 @@ import { useState } from "react";
 
 export default function BetterGallery({ imageArray }) {
   const [galleryIndex, setGalleryIndex] = useState(0);
-  console.log(imageArray);
+  
   return (
     <div className="w-fit">
       <div className="w-fit">
