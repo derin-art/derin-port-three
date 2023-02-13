@@ -3,6 +3,7 @@ import Ecom2 from "../public/ProjectImages/Ecom2.png";
 import Land1 from "../public/ProjectImages/Land1.png";
 import Vert2 from "../public/ProjectImages/Vert1.png";
 import agile2 from "../public/ProjectImages/agile1.png";
+import Dash1 from "../public/ProjectImages/Dash2.png";
 import Image from "next/image";
 import Link from "next/link";
 import { useState, useEffect } from "react";
@@ -26,6 +27,7 @@ export default function ProjectsPages() {
 
     { name: "AGILE/Scrum app", href: `/Agile`, img: agile2 },
     { name: "E-Com Management system", href: "/Crud", img: Vert2 },
+    { name: "Crypto Dashboard", href: "/dashboard", img: Dash1 },
   ];
   const finalArray = [];
   const chunkSize = 2;

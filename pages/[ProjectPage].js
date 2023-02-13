@@ -19,6 +19,8 @@ import Vert1 from "../public/ProjectImages/Vert1.png";
 import Vert2 from "../public/ProjectImages/Vert2.png";
 import Vert3 from "../public/ProjectImages/Vert3.png";
 import Vert4 from "../public/ProjectImages/Vert4.png";
+import Dash1 from "../public/ProjectImages/Dash1.png";
+import Dash2 from "../public/ProjectImages/Dash2.png";
 import ProjectSpecific from "../components/ProjectSpecific";
 import { useRouter } from "next/dist/client/router";
 export default function ProjectPage() {
@@ -238,6 +240,49 @@ export default function ProjectPage() {
         LinkName: "E-COM CRUD",
         GitHub: "https://github.com/derin-art/landing",
         Live: "https://landing-five-umber.vercel.app/",
+      },
+    },
+    {
+      Name: "CYRPTO DASHBOARD",
+      query: "dashboard",
+      OverView: (
+        <p>
+          {" "}
+          A dashboard built with nextjs and chartjs connected to a cypto api.
+        </p>
+      ),
+      Scope: (
+        <p className="">
+          I wanted to include the basic functionalities of a crypto app,
+          something that resembled the google currency query; so a chart that
+          displayed the data, an option to select different coins and a way to
+          select different dates.
+        </p>
+      ),
+      Execution: (
+        <div>
+          <ul>
+            Execution wise, I used a coin gecko’s api, chartjs to display my
+            data, framer motion for a few animations like a debit card turning
+            and local storage for performance so the app didn’t make requests to
+            the gecko api everything for the api list.
+          </ul>
+        </div>
+      ),
+      Stack: [
+        "Nextjs",
+        "TailWind",
+        "Framer Motion",
+        "TypeScript",
+        "React-Parallax",
+        "Animated-Cusor",
+        "ChartJs",
+      ],
+      Images: [Dash1, Dash2],
+      Links: {
+        LinkName: "E-COM CRUD",
+        GitHub: "https://github.com/derin-art/dashboard",
+        Live: "https://dashboard-three-omega-84.vercel.app/",
       },
     },
   ];
