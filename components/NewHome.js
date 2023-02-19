@@ -53,7 +53,7 @@ export default function NewHome() {
                 unoptimized={true}
               ></Image>
             </span>{" "}
-            Derin and i&apos;m a <span className="">fullstack</span> engineer.
+            Derin and i&apos;m a <span className="">frontend</span> engineer.
           </motion.div>
         </motion.div>
         <div className="blurry-gradient"></div>

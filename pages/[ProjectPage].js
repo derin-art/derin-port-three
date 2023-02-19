@@ -243,12 +243,12 @@ export default function ProjectPage() {
       },
     },
     {
-      Name: "CYRPTO DASHBOARD",
+      Name: "CRYPTO DASHBOARD",
       query: "dashboard",
       OverView: (
         <p>
           {" "}
-          A dashboard built with nextjs and chartjs connected to a cypto api.
+          A dashboard built with nextjs and chartjs connected to a crypto api.
         </p>
       ),
       Scope: (
@@ -256,7 +256,7 @@ export default function ProjectPage() {
           I wanted to include the basic functionalities of a crypto app,
           something that resembled the google currency query; so a chart that
           displayed the data, an option to select different coins and a way to
-          select different dates.
+          select different date ranges for the data.
         </p>
       ),
       Execution: (
@@ -274,13 +274,12 @@ export default function ProjectPage() {
         "TailWind",
         "Framer Motion",
         "TypeScript",
-        "React-Parallax",
         "Animated-Cusor",
         "ChartJs",
       ],
       Images: [Dash1, Dash2],
       Links: {
-        LinkName: "E-COM CRUD",
+        LinkName: "Crypto",
         GitHub: "https://github.com/derin-art/dashboard",
         Live: "https://dashboard-three-omega-84.vercel.app/",
       },
