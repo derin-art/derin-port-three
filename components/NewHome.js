@@ -50,7 +50,7 @@ export default function NewHome() {
                 height={100}
                 width={100}
                 className="rounded-full z-30"
-                unoptimized={true}
+                unoptimized={false}
               ></Image>
             </span>{" "}
             Derin and i&apos;m a <span className="">frontend</span> engineer.
